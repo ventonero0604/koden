@@ -1,0 +1,95 @@
+{{> head}}
+
+<body>
+  {{> header}}
+
+  <main class="Contact">
+    {{> breadCrumb}}
+    {{> pageHeader}}
+
+    <div class="Wrapper">
+      <section class="content">
+        <div class="PageTitle">
+          <h2 class="title mincho">
+            お問い合わせ
+          </h2>
+          <ul class="number">
+            <li class="black">1</li>
+            <li class="black">2</li>
+            <li>3</li>
+          </ul>
+          <p class="lead">
+            入力内容の確認画面です。<br>
+            内容確認の上、「送信」を押してください。
+          </p>
+        </div>
+
+        <form action="#">
+          <div class="form">
+            <div class="formGroup">
+              <p class="title">お問い合わせの種類<span class="required">※</span></p>
+              <p class="confirm">個別ミーティングの依頼</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">お名前<span class="required">※</span></p>
+              <p class="confirm">山田 太郎</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">お名前(かな)<span class="required">※</span></p>
+              <p class="confirm">やまだたろう</p>
+            </div>
+
+            <div class="formGroup half">
+              <p class="title">あなたの属性<span class="required">※</span></p>
+              <p class="confirm">スタートアップ</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">会社名・団体名<span class="required">※</span></p>
+              <p class="confirm">株式会社ひろしまインキュベーション&キャピタル</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">部署名<span class="required">※</span></p>
+              <p class="confirm">事業戦略部</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">URL</p>
+              <p class="confirm">https://〇〇.jp</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">メールアドレス<span class="required">※</span></p>
+              <p class="confirm">hxxxx@xxx.xxx</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">電話番号<span class="required">※</span></p>
+              <p class="confirm">xxxxxxxxxxx</p>
+            </div>
+
+            <div class="formGroup">
+              <p class="title">お問い合わせ内容<span class="required">※</span></p>
+              <p class="confirm">こちらにお問い合わせ内容が表示されます。</p>
+            </div>
+
+            <button type="submit" class="submitButton Button Button_red">送信する</button>
+
+          </div>
+        </form>
+      </section>
+    </div>
+
+
+    {{> participate}}
+  </main>
+
+  {{> footer}}
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

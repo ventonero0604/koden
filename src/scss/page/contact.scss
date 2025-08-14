@@ -1,0 +1,187 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.Contact {
+  .content {
+    padding: 10rem 0 15rem;
+    @include sp {
+      padding: 4rem 0 0;
+    }
+  }
+
+  .PageTitle {
+    display: grid;
+    place-items: center;
+    gap: 3rem;
+    text-align: center;
+
+    @include sp {
+      gap: 2rem;
+    }
+
+    .lead {
+      margin-top: 0;
+      &.left {
+        @include sp {
+          text-align: left;
+        }
+      }
+    }
+
+    .thanks {
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-block: 1rem;
+    }
+
+    .number {
+      display: flex;
+      justify-content: space-between;
+      width: 30rem;
+      position: relative;
+
+      @include sp {
+        width: 26rem;
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        display: block;
+        height: 0.1rem;
+        background: black;
+      }
+      li {
+        width: 3.4rem;
+        height: 3.4rem;
+        border-radius: 100%;
+        background: white;
+        color: black;
+        border: 1px solid black;
+        display: grid;
+        place-items: center;
+        line-height: 1;
+        position: relative;
+        &.black {
+          background: black;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .form {
+    border-top: 1px solid #898989;
+    margin-top: 4rem;
+    padding: 4rem 6rem 0;
+    display: grid;
+    gap: 3.2rem;
+
+    @include sp {
+      padding-inline: 0;
+    }
+
+    .formGroup {
+      display: grid;
+      gap: 1.2rem;
+
+      label,
+      .title {
+        font-size: 1.8rem;
+      }
+
+      &.half {
+        width: 50%;
+        @include sp {
+          width: unset;
+        }
+      }
+
+      select,
+      input,
+      textArea {
+        border: 1px solid #393636;
+        padding: 1.4rem;
+      }
+
+      select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211.741%22%20height%3D%226.619%22%20viewBox%3D%220%200%2011.741%206.619%22%3E%20%3Cpath%20id%3D%22%E3%83%91%E3%82%B9_491%22%20data-name%3D%22%E3%83%91%E3%82%B9%20491%22%20d%3D%22M-10460.359%2C4840.173l4.81%2C4.809-4.81%2C4.811%22%20transform%3D%22translate(4850.854%2010461.42)%20rotate(90)%22%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%2F%3E%3C%2Fsvg%3E');
+        background-position: right 1.4rem center;
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        padding-right: 4rem;
+      }
+
+      .required {
+        color: #f83838;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .upload {
+      display: grid;
+      gap: 2rem;
+      .title {
+        font-size: 1.8rem;
+      }
+      .uploadLabel {
+        font-size: 1.8rem;
+        text-decoration: underline;
+      }
+      .list {
+        display: grid;
+        gap: 0.6rem;
+        li {
+          position: relative;
+          padding-left: 1em;
+          color: #6f6f6f;
+          &:before {
+            content: '※';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1em;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .checkboxGroup {
+      display: grid;
+      place-items: center;
+      margin-top: 4rem;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1.6rem;
+      }
+
+      input[type='checkbox'] {
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-right: 0.4rem;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .Button {
+    width: max-content;
+    padding-inline: 4rem;
+    justify-self: center;
+    margin-top: 2rem;
+    @include sp {
+      width: 100%;
+    }
+  }
+}

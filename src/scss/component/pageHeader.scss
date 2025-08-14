@@ -1,0 +1,11 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.PageHeader {
+  background: #333333;
+  color: white;
+  padding: 3rem 4rem;
+
+  @include sp {
+    padding: 1rem 2rem;
+  }
+}

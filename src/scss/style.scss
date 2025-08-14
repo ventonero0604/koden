@@ -7,11 +7,34 @@
 
 /* component */
 @use './component/annotation.scss';
+@use './component/wrapper.scss';
+@use './component/sectionTitle.scss';
+@use './component/viewMore.scss';
+@use './component/pageHeader.scss';
+@use './component/pageTitle.scss';
+@use './component/button.scss';
 
 /* ui */
 @use './ui/header.scss';
+@use './ui/footer.scss';
+@use './ui/participate.scss';
+@use './ui/breadCrumb.scss';
+@use './ui/pageNation.scss';
+@use './ui/categories.scss';
+@use './ui/mediaList.scss';
+@use './ui/portfolioList.scss';
+
+/* page */
+@use './page/top.scss';
+@use './page/about.scss';
+@use './page/team.scss';
+@use './page/portfolio.scss';
+@use './page/media.scss';
+@use './page/news.scss';
+@use './page/contact.scss';
+@use './page/cms.scss';
+@use './page/detail.scss';
 
 /* tailwind */
 @tailwind base;
-@tailwind components;
 @tailwind utilities;

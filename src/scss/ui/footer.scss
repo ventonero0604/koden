@@ -1,0 +1,86 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.Footer {
+  padding: 5rem 0 3rem;
+  background: white;
+  position: relative;
+
+  .contents {
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 12rem;
+    margin-left: -20rem;
+    @include sp {
+      flex-direction: column;
+      margin-left: unset;
+      align-items: center;
+      gap: 4rem;
+
+      .logo {
+        img {
+          width: 15rem;
+        }
+      }
+    }
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .pages {
+      li + li {
+        margin-top: 1rem;
+      }
+      a {
+        font-weight: bold;
+        font-size: 1.4rem;
+        @include sp {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .details {
+      margin-top: 0.5rem;
+      line-height: 1.5;
+      @include sp {
+        text-align: left;
+      }
+
+      li + li {
+        margin-top: 0;
+      }
+      a {
+        font-weight: normal;
+        color: #5f5f5f;
+        font-size: 1.2rem;
+        @include sp {
+          font-size: 1.4rem;
+        }
+        &:before {
+          content: '-';
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  small {
+    margin-top: 4rem;
+    font-size: 1rem;
+    color: #5f5f5f;
+    text-align: center;
+  }
+}

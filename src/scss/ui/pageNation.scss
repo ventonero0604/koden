@@ -1,0 +1,29 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.PageNation {
+  padding: 6rem 4rem;
+  @include sp {
+    padding: 4rem 0 0;
+  }
+
+  &.separator {
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid #898989;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include sp {
+      .Button {
+        font-size: 1.2rem;
+        padding: 1rem;
+        width: max-content;
+        height: max-content;
+      }
+    }
+  }
+}

@@ -1,0 +1,657 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.Top {
+  .upper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .movie {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    height: 100%;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .kv {
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30rem 0;
+
+    @include sp {
+      padding: 10rem 0;
+    }
+
+    .logo {
+      display: block;
+      width: 45rem;
+      @include sp {
+        width: 21rem;
+      }
+    }
+
+    .title {
+      margin-top: 10rem;
+      font-size: 5rem;
+      letter-spacing: 2rem;
+      margin-right: -4rem;
+
+      @include sp {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-left: unset;
+        letter-spacing: 1.2rem;
+      }
+    }
+
+    .texts {
+      margin-top: 10rem;
+      display: grid;
+      gap: 3rem;
+      padding-left: 2rem;
+
+      .text {
+        font-size: 2.4rem;
+        @include sp {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  .about {
+    background: linear-gradient(to bottom, #800216, #b7011e);
+    color: white;
+    padding: 12rem 0 24rem;
+    position: relative;
+    @include sp {
+      padding: 5rem 0 18rem;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      height: 35rem;
+      width: 100%;
+      background: center/cover no-repeat url('../../img/bg_about.png');
+      @include sp {
+        height: 18rem;
+      }
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include sp {
+        display: block;
+      }
+
+      .logo {
+        @include sp {
+          width: 21rem;
+          margin: 0 auto -4rem;
+        }
+      }
+
+      .texts {
+        margin-left: -2rem;
+        display: grid;
+        gap: 3rem;
+        @include sp {
+          margin: unset;
+        }
+
+        .title {
+          font-size: 4rem;
+          @include sp {
+            font-size: 3rem;
+          }
+        }
+
+        .text {
+          font-weight: bold;
+          font-size: 2rem;
+          line-height: 2;
+          @include sp {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+
+    .content {
+      margin-top: 7rem;
+      display: grid;
+      place-content: center;
+
+      .items {
+        display: flex;
+        @include sp {
+          flex-direction: column;
+        }
+
+        .item {
+          .object {
+            background: white;
+            border-radius: 100%;
+            width: 41.5rem;
+            aspect-ratio: 1;
+            display: grid;
+            place-content: center;
+            gap: 2rem;
+            position: relative;
+            box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.16);
+            @include sp {
+              width: 33.5rem;
+            }
+
+            &:after {
+              background: white;
+              content: '';
+              display: block;
+              width: 0.1rem;
+              height: 10rem;
+              position: absolute;
+              bottom: -10rem;
+              left: 50%;
+              transform: translateX(-50%);
+              @include sp {
+                bottom: -5rem;
+              }
+            }
+
+            .title {
+              color: var(--primary);
+              font-size: 4rem;
+              font-weight: 200;
+              height: max-content;
+              @include sp {
+                font-size: 2.2rem;
+                text-align: center;
+              }
+            }
+
+            img {
+              margin-inline: auto;
+              @include sp {
+                max-width: 11rem;
+              }
+            }
+
+            .text {
+              text-align: center;
+              font-size: 1.8rem;
+              font-weight: bold;
+              color: black;
+              @include sp {
+                font-size: 1.6rem;
+              }
+            }
+          }
+
+          .desc {
+            width: 26.7rem;
+            margin: 12rem auto 0;
+            @include sp {
+              margin-top: 8rem;
+            }
+          }
+        }
+
+        .item + .item {
+          margin-left: -3rem;
+          @include sp {
+            margin-left: unset;
+          }
+        }
+
+        .item:nth-child(2) {
+          margin-top: 7rem;
+          @include sp {
+            margin-top: 4rem;
+          }
+        }
+
+        .item:nth-child(3) {
+          margin-top: 14rem;
+          @include sp {
+            margin-top: 4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .support {
+    padding: 7rem 0 12rem;
+    text-align: center;
+    @include sp {
+      padding: 2rem 0 5rem;
+    }
+
+    .title {
+      font-size: 9.8rem;
+      @include sp {
+        font-size: 5.7rem;
+        line-height: 9rem;
+      }
+      em {
+        font-size: 19.1rem;
+        @include sp {
+          font-size: 11rem;
+        }
+      }
+    }
+
+    .lead {
+      font-size: 4.1rem;
+      color: var(--primary);
+      @include sp {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+      }
+    }
+
+    .items {
+      background: #f9f9f9;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto 1fr;
+      margin-top: 5rem;
+
+      @include sp {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+      }
+
+      .item {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 2;
+        gap: 2rem;
+        padding: 4rem;
+
+        @include sp {
+          padding: 2rem;
+          grid-row: span 2;
+        }
+
+        .itemTitle {
+          font-size: 2rem;
+          font-weight: 600;
+          position: relative;
+          align-self: center;
+          height: 6rem;
+          display: grid;
+          place-items: center;
+
+          &:after {
+            content: '';
+            display: block;
+            height: 1px;
+            background: #707070;
+            width: 2.2rem;
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        .value {
+          color: var(--primary);
+          font-size: 2.7rem;
+          align-self: start;
+
+          @include sp {
+            font-size: 2.5rem;
+          }
+
+          em {
+            font-size: 7.8rem;
+            @include sp {
+              font-size: 6rem;
+            }
+          }
+          span {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .portfolio {
+    padding: 0 0 15rem;
+    @include sp {
+      padding: 0 0 2rem;
+    }
+    .content {
+      margin-top: 5rem;
+      display: flex;
+      justify-content: space-between;
+      @include sp {
+        margin-top: 2.4rem;
+        flex-direction: column;
+        gap: 4rem;
+      }
+
+      .texts {
+        display: grid;
+        height: min-content;
+        gap: 3rem;
+        width: 47rem;
+        @include sp {
+          width: unset;
+        }
+
+        .title {
+          font-size: 3.1rem;
+          font-weight: bold;
+          @include sp {
+            font-size: 2.2rem;
+          }
+        }
+
+        .text {
+          line-height: 1.7;
+        }
+
+        .ViewMore {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  .separator {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    @include sp {
+      display: none;
+    }
+    .text {
+      font-size: 2.5rem;
+      letter-spacing: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  .banners {
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+
+    .list-wrapper {
+      margin-top: 10rem;
+      @include sp {
+        margin-top: 5rem;
+        margin-bottom: 7rem;
+      }
+
+      .list {
+        display: flex;
+        gap: 2rem;
+        animation: marquee 20s linear infinite;
+        width: calc(200% + 2rem);
+        @include sp {
+          width: calc(100% + 2rem);
+        }
+
+        .item {
+          width: 25rem;
+          height: 10rem;
+          flex-shrink: 0;
+          @include sp {
+            width: 13rem;
+            height: 3.5rem;
+          }
+
+          a {
+            display: block;
+            img {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .media {
+    background: #f9f9f9;
+    padding: 5rem 0 20rem;
+    @include sp {
+      padding: 5rem 0;
+    }
+
+    .content {
+      margin-top: 1.6rem;
+    }
+    .content + .content {
+      margin-top: 7rem;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+
+      .title {
+        font-size: 3.1rem;
+        font-weight: bold;
+        @include sp {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4rem;
+      margin-top: 2rem;
+      @include sp {
+        grid-template-columns: 1fr;
+      }
+
+      .item {
+        a {
+          display: grid;
+          gap: 1rem;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+
+        .date {
+          font-size: 1.2rem;
+        }
+
+        .label {
+          background: #333333;
+          color: white;
+          font-size: 1.2rem;
+          line-height: 1;
+          padding: 0.5rem;
+          width: max-content;
+        }
+
+        .title {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .team {
+    overflow: hidden;
+    .content {
+      margin-top: 5rem;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 8rem;
+      @include sp {
+        flex-direction: column;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .texts {
+        display: grid;
+        height: min-content;
+        gap: 3rem;
+        width: 47rem;
+        @include sp {
+          width: unset;
+        }
+
+        .title {
+          font-size: 3.1rem;
+          font-weight: bold;
+          @include sp {
+            font-size: 2.2rem;
+          }
+        }
+
+        .text {
+          line-height: 1.7;
+        }
+
+        .ViewMore {
+          margin-left: auto;
+        }
+      }
+
+      .slider {
+        display: grid;
+        overflow-x: scroll;
+        gap: 20px;
+        grid-template-columns: repeat(3, 31rem);
+        margin-right: calc(-50vw + 50%);
+        width: calc(100vw - 50%);
+        padding-bottom: 1rem;
+        @include sp {
+          grid-template-columns: repeat(3, 24rem);
+          width: 100vw;
+        }
+      }
+    }
+  }
+
+  .news {
+    padding: 17rem 0 15rem;
+    @include sp {
+      padding: 5rem 0;
+    }
+
+    .Wrapper {
+      display: grid;
+      place-items: center;
+      gap: 4rem;
+      @include sp {
+        place-items: start;
+      }
+    }
+
+    .content {
+      width: 100%;
+      .items {
+        width: 100%;
+      }
+      .item {
+        a {
+          display: grid;
+          gap: 2rem;
+          font-size: 1.6rem;
+          border-bottom: 1px solid #e6e6e6;
+          padding-bottom: 2rem;
+          position: relative;
+          padding-right: 5rem;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 0.4rem;
+            height: 0.7rem;
+            background: center/contain no-repeat url('../../img/ico_arrow_right_red.svg');
+            position: absolute;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+          }
+
+          &:before {
+            content: '';
+            display: block;
+            width: 3.9rem;
+            height: 0.1rem;
+            background: var(--primary);
+            position: absolute;
+            bottom: -0.1rem;
+            right: 0;
+          }
+        }
+      }
+
+      .item + .item {
+        margin-top: 2rem;
+      }
+
+      .info {
+        font-size: 1.3rem;
+        color: #767676;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .date {
+          &:after {
+            margin-left: 1rem;
+            content: '｜';
+          }
+        }
+      }
+
+      .ViewMore {
+        margin: 4rem auto 0;
+        justify-self: center;
+        @include sp {
+          margin: 4rem 0 0;
+          justify-self: end;
+        }
+      }
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); // 半分移動すると元の位置に戻る
+    }
+  }
+}

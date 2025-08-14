@@ -1,0 +1,13 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.SectionTitle {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--primary);
+  font-size: 12rem;
+
+  @include sp {
+    font-size: 5rem;
+  }
+}

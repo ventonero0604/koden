@@ -20,7 +20,7 @@ const pageData = {
 const root = 'src';
 
 export default defineConfig({
-  base: "./",
+  base: './',
   server: {
     host: true //IPアドレスを有効化
   },
@@ -45,23 +45,36 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name].js'
       },
       input: {
-        index: resolve(__dirname, 'index.html'),
-        hoge: resolve(__dirname, 'hoge.html')
+        index: resolve(__dirname, root, 'index.html'),
+        about: resolve(__dirname, root, 'about.html'),
+        cms: resolve(__dirname, root, 'cms.html'),
+        contact: resolve(__dirname, root, 'contact.html'),
+        contact_complete: resolve(__dirname, root, 'contact_complete.html'),
+        contact_detail: resolve(__dirname, root, 'contact_detail.html'),
+        media: resolve(__dirname, root, 'media.html'),
+        media_detail: resolve(__dirname, root, 'media_detail.html'),
+        media_list: resolve(__dirname, root, 'media_list.html'),
+        news: resolve(__dirname, root, 'news.html'),
+        news_detail: resolve(__dirname, root, 'news_detail.html'),
+        portfolio: resolve(__dirname, root, 'portfolio.html'),
+        portfolio_detail: resolve(__dirname, root, 'portfolio_detail.html'),
+        team: resolve(__dirname, root, 'team.html'),
+        team_detail: resolve(__dirname, root, 'team_detail.html')
       }
     }
   },
   /*
     プラグインの設定を追加
   */
-    plugins: [
-      handlebars({
-        //コンポーネントの格納ディレクトリを指定
-        partialDirectory: resolve(__dirname, root, "components"),
-        //各ページ情報の読み込み
-        context(pagePath) {
-          const pageName = pagePath.split("/").pop();
-          return pageData[pageName];
-        },
-      }),
-    ],
+  plugins: [
+    handlebars({
+      //コンポーネントの格納ディレクトリを指定
+      partialDirectory: resolve(__dirname, root, 'components'),
+      //各ページ情報の読み込み
+      context(pagePath) {
+        const pageName = pagePath.split('/').pop();
+        return pageData[pageName];
+      }
+    })
+  ]
 });

@@ -1,0 +1,25 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.BreadCrumb {
+  background: #ececec;
+  padding: 2.5rem 4rem 2.5rem;
+  @include sp {
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+  }
+
+  .item {
+    color: #707070;
+  }
+
+  .item + .item {
+    &:before {
+      margin: 0 1rem;
+      content: '>';
+    }
+  }
+}

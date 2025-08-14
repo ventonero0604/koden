@@ -1,0 +1,315 @@
+@use '../foundation/pxvw.scss' as *;
+@use '../foundation/breakPoint.scss' as *;
+
+.About {
+  background: #f9f9f9;
+
+  &_title {
+    font-size: 4rem;
+    font-family: 'Shippori Mincho', serif;
+    @include sp {
+      font-size: 2.5rem;
+    }
+
+    &.red {
+      color: var(--primary);
+      font-weight: bold;
+    }
+  }
+
+  .kv {
+    background: white;
+    padding: 0 0 10rem;
+    @include sp {
+      padding: 0 0 5rem;
+    }
+
+    .main {
+      position: relative;
+      height: vwpc(540);
+      display: grid;
+      place-items: center;
+      @include sp {
+        height: vwsp(287);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: vwpc(1332);
+        height: 100%;
+        aspect-ratio: 1332 / 540;
+        background: center center / cover no-repeat url('../../img/about_main.png');
+        position: absolute;
+        top: 0;
+        left: vwpc(348);
+        @include sp {
+          width: vwsp(355);
+          left: vwsp(20);
+        }
+      }
+
+      .texts {
+        position: absolute;
+        top: 50%;
+        left: vwpc(152);
+        transform: translateY(-50%);
+        z-index: 1;
+        @include sp {
+          left: vwsp(19);
+        }
+      }
+
+      .title {
+        color: var(--primary);
+        font-weight: bold;
+        font-size: vwpc(66);
+        background: white;
+        display: block;
+        padding: 0 vwpc(10);
+        width: max-content;
+        @include sp {
+          font-size: vwsp(30);
+          padding: 0 vwsp(10);
+        }
+      }
+
+      .text {
+        font-size: vwpc(15);
+        background: white;
+        display: block;
+        margin-top: vwpc(24);
+        padding: vwpc(10);
+        width: max-content;
+        @include sp {
+          font-size: vwsp(14);
+          margin-top: vwsp(10);
+          padding: vwsp(10);
+          width: 90%;
+        }
+      }
+    }
+
+    .lead {
+      text-align: center;
+      font-weight: bold;
+      font-size: vwpc(20);
+      margin-top: vwpc(100);
+      line-height: 1.6;
+      @include sp {
+        font-size: vwsp(19);
+        margin-top: vwsp(40);
+        padding: 0 vwsp(20);
+      }
+    }
+  }
+
+  .about {
+    background: #fafafa;
+    padding: 10rem 0;
+    @include sp {
+      padding: 5rem 0;
+    }
+
+    .lead {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      @include sp {
+        margin-top: 2rem;
+      }
+    }
+
+    .image {
+      margin-top: 3rem;
+    }
+  }
+
+  .mission {
+    background: white;
+    padding: 10rem 0 16rem;
+    @include sp {
+      padding: 5rem 0;
+    }
+
+    .image {
+      margin-top: 12rem;
+      @include sp {
+        margin-top: 0;
+        img {
+          margin: 3rem auto 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .value {
+      font-size: 9.8rem;
+      text-align: center;
+      @include sp {
+        font-size: 5rem;
+        line-height: 8rem;
+        margin-top: 4rem;
+      }
+
+      em {
+        font-size: 19rem;
+        @include sp {
+          font-size: 9.8rem;
+        }
+      }
+    }
+
+    .lead {
+      font-size: 4.1rem;
+      font-weight: bold;
+      text-align: center;
+      @include sp {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+      }
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr auto;
+      gap: 4rem;
+      margin-top: 5rem;
+      @include sp {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .item {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 2;
+        padding: 7rem 3.6rem 3rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        @include sp {
+          padding: 3rem;
+        }
+
+        img {
+          width: min-content;
+          margin: 0 auto;
+          align-self: end;
+        }
+
+        .texts {
+          border-top: 1px solid #c9c9c9;
+          padding: 3rem 0 0;
+          align-self: start;
+          line-height: 1.8;
+          @include sp {
+            padding: 1rem 0 0;
+          }
+        }
+
+        .listTitle {
+          font-size: 1.6rem;
+          font-weight: bold;
+        }
+
+        .listText {
+          margin-top: 2.4rem;
+          @include sp {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .us {
+    padding: 0 0 18rem;
+    background: white;
+    @include sp {
+      padding: 0 0 5rem;
+    }
+
+    table {
+      margin-top: 1rem;
+      width: 100%;
+      th,
+      td {
+        padding: 2rem;
+        border-bottom: 1px solid #707070;
+        text-align: left;
+        @include sp {
+          border: unset;
+          display: block;
+        }
+      }
+      @include sp {
+        td {
+          border-bottom: 1px solid #707070;
+          padding: 2rem;
+        }
+        th {
+          padding: 2rem 2rem 0;
+        }
+      }
+    }
+  }
+
+  .fund {
+    background: #f9f9f9;
+    padding: 10rem 0;
+    @include sp {
+      padding: 4rem 0 0;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include sp {
+        flex-direction: column;
+      }
+    }
+
+    .content + .content {
+      margin-top: 15rem;
+      @include sp {
+        margin-top: 4rem;
+      }
+    }
+
+    .texts {
+      max-width: 55rem;
+    }
+
+    .lead {
+      margin-top: 3rem;
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+
+    @include sp {
+      .image {
+        margin-top: 4rem;
+      }
+    }
+
+    .btn {
+      padding: 1.5rem 2rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--primary);
+      border: 0.1rem solid var(--primary);
+      display: inline-block;
+      margin-top: 5rem;
+      @include sp {
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
+      }
+    }
+
+    img {
+      max-width: 36rem;
+    }
+  }
+}
