@@ -10,20 +10,21 @@
             <li>
               <a href="/about">HICとは</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/portfolio">ポートフォリオ</a>
-            </li>
+            </li> -->
             <li>
               <a href="/team">チーム</a>
             </li>
           </ul>
+          <!-- 
           <ul class="pages">
             <li>
               <a href="/media">メディア</a>
             </li>
             <li>
               <a href="/media/column">コラム</a>
-              <!-- <ul class="details">
+              <ul class="details">
                 <li>
                   <a href="/media/column/business-skills">ビジネススキル</a>
                 </li>
@@ -36,11 +37,11 @@
                 <li>
                   <a href="/media/column/foundation-knowledge">会社設立の基礎知識</a>
                 </li>
-              </ul> -->
+              </ul> 
             </li>
             <li>
               <a href="/media/story">ストーリー</a>
-              <!-- <ul class="details">
+               <ul class="details">
                 <li>
                   <a href="/media/story/researcher">研究者ストーリー</a>
                 </li>
@@ -50,9 +51,10 @@
                 <li>
                   <a href="/media/story/corporate">将来展望・想い</a>
                 </li>
-              </ul> -->
+              </ul>
             </li>
           </ul>
+          -->
           <ul class="pages">
             <li>
               <a href="/news">NEWS</a>

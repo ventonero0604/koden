@@ -121,7 +121,7 @@
             <p class="lead">
               広島大学発スタートアップの成長基盤を多角的に支援
             </p>
-            <ul class="items">
+            <!-- <ul class="items">
               <li class="item">
                 <p class="itemTitle">
                   広大関連<br>
@@ -160,7 +160,7 @@
                   <span>以上</span>
                 </p>
               </li>
-            </ul>
+            </ul> -->
           </div>
         </section>
 
@@ -180,7 +180,7 @@
                   起業・マーケット拡大に向けた多様な支援を行います。<br>
                   特に、半導体、材料工学、通信/編集、再生医療、DX（デジタルトランスフォーメーション）、カーボンニュートラルといった分野での支援を重点的に実施しています。
                 </p>
-                <a href="#" class="ViewMore">VIEW MORE</a>
+                <!-- <a href="#" class="ViewMore">VIEW MORE</a> -->
               </div>
               <figure class="image">
                 <img src="<?php echo get_template_directory_uri(); ?>/dist/img/img_portfolio.svg" alt="">
@@ -196,7 +196,7 @@
           </p>
         </figure>
 
-        <section class="banners">
+        <!-- <section class="banners">
           <div class="list-wrapper">
             <ul class="list">
               <li class="item">
@@ -219,7 +219,6 @@
                   <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
                 </a>
               </li>
-              <!-- 無限ループ用の複製 -->
               <li class="item">
                 <a href="/">
                   <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
@@ -242,9 +241,9 @@
               </li>
             </ul>
           </div>
-        </section>
+        </section> -->
 
-        <section class="media">
+        <!-- <section class="media">
           <div class="Wrapper">
             <h2 class="SectionTitle">
               Media
@@ -378,7 +377,7 @@
               </ul>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <section class="team">
           <div class="Wrapper">
@@ -394,24 +393,37 @@
                   シード期から上場後までを見据えて、<br>
                   ひとつひとつの事業を磨きあげていきます。
                 </p>
-                <a href="#" class="ViewMore">VIEW MORE</a>
+                <a href="/team" class="ViewMore">VIEW MORE</a>
               </div>
               <ul class="slider">
-                <li class="item">
-                  <a href="/">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_team_1.png" alt="">
-                  </a>
-                </li>
-                <li class="item">
-                  <a href="/">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_team_1.png" alt="">
-                  </a>
-                </li>
-                <li class="item">
-                  <a href="/">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_team_1.png" alt="">
-                  </a>
-                </li>
+                <?php
+                // team投稿を全件取得
+                $team_query = new WP_Query(array(
+                  'post_type' => 'team',
+                  'posts_per_page' => -1, // 全件取得
+                  'orderby' => 'date',
+                  'order' => 'DESC'
+                ));
+
+                if ($team_query->have_posts()) {
+                  while ($team_query->have_posts()) {
+                    $team_query->the_post();
+                    $team_image = get_field('image');
+                ?>
+                    <li class="item">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php if ($team_image) : ?>
+                          <img src="<?php echo esc_url($team_image); ?>" alt="<?php the_title_attribute(); ?>">
+                        <?php else : ?>
+                          <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_team_1.png" alt="<?php the_title_attribute(); ?>">
+                        <?php endif; ?>
+                      </a>
+                    </li>
+                <?php
+                  }
+                  wp_reset_postdata();
+                }
+                ?>
               </ul>
             </div>
           </div>
@@ -424,29 +436,70 @@
             </h2>
             <div class="content">
               <ul class="list">
-                <li class="item">
-                  <a href="#">
-                    <p class="info">
-                      <span class="date">2025/1/24</span>
-                      <span class="category">イベント</span>
-                    </p>
-                    <p class="title">
-                      広島県が開催するグローバルイノベーションカンファレンス「SusHi Tech Hiroshima 2024 Global Startup Program」のアンバサダーに就任
-                    </p>
-                  </a>
-                </li>
-                <li class="item">
-                  <a href="#">
-                    <p class="info">
-                      <span class="date">2025/1/24</span>
-                      <span class="category">イベント</span>
-                    </p>
-                    <p class="title">
-                      OptQC株式会社への出資を決定 </p>
-                  </a>
-                </li>
+                <?php
+                // 最新のnews投稿を5件取得
+                $news_query = new WP_Query(array(
+                  'post_type' => 'news',
+                  'posts_per_page' => 5,
+                  'orderby' => 'date',
+                  'order' => 'DESC'
+                ));
+
+                if ($news_query->have_posts()) {
+                  while ($news_query->have_posts()) {
+                    $news_query->the_post();
+                    $categories = get_the_terms(get_the_ID(), 'news_category');
+                ?>
+                    <li class="item">
+                      <a href="<?php the_permalink(); ?>">
+                        <p class="info">
+                          <span class="date"><?php echo get_the_date('Y/n/j'); ?></span>
+                          <span class="category">
+                            <?php
+                            if ($categories && !is_wp_error($categories)) {
+                              echo esc_html($categories[0]->name);
+                            }
+                            ?>
+                          </span>
+                        </p>
+                        <p class="title">
+                          <?php the_title(); ?>
+                        </p>
+                      </a>
+                    </li>
+                  <?php
+                  }
+                  wp_reset_postdata();
+                } else {
+                  // news投稿が存在しない場合のデフォルト表示
+                  ?>
+                  <li class="item">
+                    <a href="#">
+                      <p class="info">
+                        <span class="date">2025/1/24</span>
+                        <span class="category">イベント</span>
+                      </p>
+                      <p class="title">
+                        広島県が開催するグローバルイノベーションカンファレンス「SusHi Tech Hiroshima 2024 Global Startup Program」のアンバサダーに就任
+                      </p>
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <p class="info">
+                        <span class="date">2025/1/24</span>
+                        <span class="category">イベント</span>
+                      </p>
+                      <p class="title">
+                        OptQC株式会社への出資を決定
+                      </p>
+                    </a>
+                  </li>
+                <?php
+                }
+                ?>
               </ul>
-              <a href="#news" class="ViewMore">VIEW MORE</a>
+              <a href="/news" class="ViewMore">VIEW MORE</a>
             </div>
           </div>
         </section>

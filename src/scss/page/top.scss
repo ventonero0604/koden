@@ -546,16 +546,32 @@
       }
 
       .slider {
-        display: grid;
+        display: flex;
         overflow-x: scroll;
         gap: 20px;
-        grid-template-columns: repeat(3, 31rem);
         margin-right: calc(-50vw + 50%);
         width: calc(100vw - 50%);
         padding-bottom: 1rem;
         @include sp {
-          grid-template-columns: repeat(3, 24rem);
           width: 100vw;
+        }
+
+        .item {
+          flex: 0 0 auto; // アイテムの幅を固定
+          a {
+            width: 30rem;
+            height: 41rem;
+            display: block;
+            @include sp {
+              width: 18rem;
+              height: 24rem;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
         }
       }
     }

@@ -12,9 +12,10 @@
       <li>
         <a href="/news">NEWS</a>
       </li>
-      <li>
+      <!-- <li>
         <a href="/media">メディア</a>
-      </li>
+      </li> -->
+      <li><a href="/contact">お問い合わせ</a></li>
     </ul>
   </div>
   <div class="expand">
@@ -29,7 +30,7 @@
         </li>
         <li><a href="/news">NEWS</a></li>
         <li><a href="/contact">お問い合わせ</a></li>
-        <li><a href="/media">メディア</a>
+        <!-- <li><a href="/media">メディア</a>
           <ul>
             <li>
               <a href="/media/column">コラム</a>
@@ -39,7 +40,7 @@
             </li>
           </ul>
         </li>
-        <li><a href="/portfolio">ポートフォリオ</a></li>
+        <li><a href="/portfolio">ポートフォリオ</a></li> -->
       </ul>
     </div>
   </div>

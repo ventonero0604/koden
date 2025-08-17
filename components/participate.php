@@ -16,7 +16,7 @@
     <ul class="links">
       <li class="startup">
         <p class="linkLead">広島大学発<span class="mincho">スタートアップ</span></p>
-        <a href="/contact/?type=startup" class="linkForm mincho">
+        <a href="/contact/?userType=スタートアップ" class="linkForm mincho">
           応募フォーム
           <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_arrow.svg" alt="">
         </a>
