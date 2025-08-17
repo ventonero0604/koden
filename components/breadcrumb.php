@@ -28,8 +28,8 @@
       if ($post_type === 'post') {
         // 通常の投稿
         echo '<li class="item"><a href="' . get_permalink(get_option('page_for_posts')) . '">ブログ</a></li>';
-      } elseif ($post_type === 'member') {
-        echo '<li class="item"><a href="' . home_url('/member/') . '">メンバー</a></li>';
+      } elseif ($post_type === 'team') {
+        echo '<li class="item"><a href="' . home_url('/team/') . '">チーム</a></li>';
       } elseif ($post_type === 'portfolio') {
         echo '<li class="item"><a href="' . home_url('/portfolio/') . '">ポートフォリオ</a></li>';
       } elseif ($post_type === 'news') {

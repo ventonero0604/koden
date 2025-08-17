@@ -11,114 +11,122 @@ Template Post Type: post
 
 <body>
   <?php get_template_part('components/header'); ?>
-  <main class="TeamDetail">
+  <main class="PortfolioDetail">
     <?php get_template_part('components/breadcrumb'); ?>
     <div class="PageHeader">
       <h1 class="title">
         <?php the_title(); ?>
       </h1>
     </div>
+    <figure class="Detail_topImage">
+      <?php if (get_field('top_image_pc') && get_field('top_image_sp')): ?>
+        <picture>
+          <source srcset="<?php echo esc_html(get_field('top_image_sp')); ?>" media="(max-width: 768px)">
+          <img src="<?php echo esc_html(get_field('top_image_pc')); ?>" alt="">
+        </picture>
+      <?php endif; ?>
+    </figure>
+
     <div class="Wrapper">
       <div class="content">
-        <section class="main">
-          <figure class="image">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/img/team_detail_member_1.png" alt="メンバー1" />
-          </figure>
-          <div class="texts">
-            <div class="header">
-              <p class="job">
-                代表取締役社長
-              </p>
+        <div class="Wrapper">
+          <section class="Detail_companyHeader">
+            <figure class="logo">
+              <img src="<?php echo esc_html(get_field('logo')); ?>" alt="" class="logo">
+            </figure>
+            <div class="texts">
               <h2 class="name">
-                山田 太郎
+                <?php echo esc_html(get_field('top_company_name')); ?>
               </h2>
-              <p class="en">
-                Tarou Yamada
-              </p>
-
+              <a href="<?php echo esc_url(get_field('top_company_url')); ?>"><?php echo esc_html(get_field('top_company_url')); ?></a>
             </div>
-            <div class="profile">
+          </section>
+
+          <section class="Detail_lead">
+            <h3 class="title mincho">
+              <?php echo esc_html(get_field('lead')); ?>
+            </h3>
+          </section>
+
+          <section class="Cms">
+            <?php the_content(); ?>
+            <div class="Cms_summary Cms_summary_bottom">
               <p class="title">
-                プロフィール
+                <?php echo esc_html(get_field('summary_title')); ?>
               </p>
-              <p class="text">
-                プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。プロフィール文章が入ります。
-              </p>
-
-              <p class="text">
-                ・広島大学大学院法学研究科修了（法学修士）。<br>
-                ・一般社団法人HONGO AI　理事
-              </p>
+              <dl class="list">
+                <dt>
+                  <?php echo esc_html(get_field('summary_item_title_1')); ?>
+                </dt>
+                <dd>
+                  <?php echo esc_html(get_field('summary_item_text_1')); ?>
+                </dd>
+                <dt>
+                  <?php echo esc_html(get_field('summary_item_title_2')); ?>
+                </dt>
+                <dd>
+                  <?php echo esc_html(get_field('summary_item_text_2')); ?>
+                </dd>
+              </dl>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="portfolio">
-          <h3 class="title">
-            ポートフォリオ
-          </h3>
-          <ul class="PortfolioList">
-            <li class="item">
-              <a href="#">
-                <figure class="image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo1.png" alt="ポートフォリオ1">
-                </figure>
-                <p class="name">会社名が入ります会社名が入ります</p>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo2.png" alt="ポートフォリオ1">
-                <p class="name">会社名が入ります</p>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
-                <p class="name">会社名が入ります</p>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
-                <p class="name">会社名が入ります</p>
-              </a>
-            </li>
-          </ul>
-        </section>
+          <?php get_template_part('components/companyInfo'); ?>
+          <?php get_template_part('components/companyBanner'); ?>
 
-        <section class="media">
-          <h3 class="title">
-            メディア
-          </h3>
-          <ul class="MediaList">
-            <li class="item">
-              <a href="#">
-                <figure class="image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/team_member_1.png" alt="ポートフォリオ1">
-                </figure>
-                <div class="texts">
-                  <p class="date">2025/1/11</p>
-                  <p class="category">起業家ストーリー</p>
-                  <p class="text">「精豆菌」で新たな市場を切り開く。「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱食糧危機に挑む起業家の情熱</p>
-                </div>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <figure class="image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/team_detail_member_1.png" alt="ポートフォリオ1">
-                </figure>
-                <div class="texts">
-                  <p class="date">2025/1/11</p>
-                  <p class="category">起業家ストーリー</p>
-                  <p class="text">「精豆菌」で新たな市場を切り開く。「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱食糧危機に挑む起業家の情熱</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </section>
-        <a href="#" class="Button Button_red">一覧に戻る</a>
+          <section class="Detail_person">
+            <div class="Detail_wrapper">
+              <h4 class="Detail_sectionTitle">担当者</h4>
+              <ul class="list">
+                <li class="item">
+                  <img src="./img/team_member_1.png" alt="メンバー1">
+                  <p class="name">名前が入ります</p>
+                </li>
+                <li class="item">
+                  <img src="./img/team_member_1.png" alt="メンバー1">
+                  <p class="name">名前が入ります</p>
+                </li>
+                <li class="item">
+                  <img src="./img/team_member_1.png" alt="メンバー1">
+                  <p class="name">名前が入ります</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="Detail_media">
+            <div class="Detail_wrapper">
+              <h4 class="Detail_sectionTitle">メディア</h4>
+              <ul class="MediaList">
+                <li class="item">
+                  <a href="#">
+                    <figure class="image">
+                      <img src="./img/team_member_1.png" alt="ポートフォリオ1">
+                    </figure>
+                    <div class="texts">
+                      <p class="date">2025/1/11</p>
+                      <p class="category">起業家ストーリー</p>
+                      <p class="text">「精豆菌」で新たな市場を切り開く。「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱食糧危機に挑む起業家の情熱</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <figure class="image">
+                      <img src="./img/team_detail_member_1.png" alt="ポートフォリオ1">
+                    </figure>
+                    <div class="texts">
+                      <p class="date">2025/1/11</p>
+                      <p class="category">起業家ストーリー</p>
+                      <p class="text">「精豆菌」で新たな市場を切り開く。「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱食糧危機に挑む起業家の情熱</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <a href="#" class="Button Button_red Detail_btn">一覧に戻る</a>
+        </div>
       </div>
     </div>
     <?php get_template_part('components/participate'); ?>

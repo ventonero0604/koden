@@ -41,6 +41,16 @@
   .wp-block-table tr td:first-child {
     width: 30%;
   }
+  .wp-block-gallery {
+    margin-top: 3rem;
+  }
+  .wp-block-image {
+    margin-top: 3rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 
   &_summary {
     background: #fafafa;
@@ -71,6 +81,19 @@
   }
 
   .simpletoc-title {
-    display: none;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  .simpletoc-list {
+    margin-top: 2rem;
+    li {
+      font-size: 1.8rem;
+      line-height: 1.8;
+      font-weight: bold;
+      &:before {
+        content: '・';
+        margin-right: 0.5rem;
+      }
+    }
   }
 }

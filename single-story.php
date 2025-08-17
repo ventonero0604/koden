@@ -23,119 +23,82 @@ Template Post Type: post
       <div class="Wrapper">
         <section class="Detail_header">
           <h2 class="title">
-            タイトルが入ります。あなたのDNAが拓く未来、健康と可能性を支えるあなたのDNAが拓く未来、健康と可能性を支える企業
+            <?php the_title(); ?>
           </h2>
           <p class="name">
-            会社名 起業者名
+            <?php echo esc_html(get_field('company_head_name')); ?>
           </p>
           <p class="info">
-            <span>2025/1/11</span>
-            <span>ストーリー</span>
+            <span><?php echo get_the_date('Y/n/j'); ?></span>
+            <?php
+            $categories = get_the_terms(get_the_ID(), 'column_category');
+            if ($categories && !is_wp_error($categories)) {
+              echo '<span>' . esc_html($categories[0]->name) . '</span>';
+            }
+            ?>
           </p>
         </section>
 
         <figure class="Detail_mainImage">
-          <img src="<?php echo get_template_directory_uri(); ?>/dist/img/team_detail_member_1.png" alt="">
+          <img src="<?php echo esc_html(get_field('main_image')); ?>" alt="">
         </figure>
 
         <section class="Cms">
-          <div class="Cms_summary Cms_summary_bottom">
-            <p class="title">
-              希少性を活用したビジネス展開
-            </p>
-            <dl class="list">
-              <dt>
-                独占的な市場地位
-              </dt>
-              <dd>
-                データと技術力を強みに、特定のニッチ市場（例: 遺伝性疾患スクリーニングや希少疾患用創薬）で独占的な地位を構築。
-              </dd>
-              <dt>
-                プレミアムブランド戦略:
-              </dt>
-              <dd>
-                高精度かつ信頼性の高い解析サービスをプレミアム価格で提供し、他社との差別化を図る。
-              </dd>
-            </dl>
-          </div>
+          <?php the_content(); ?>
         </section>
 
-        <section class="Detail_about">
-          <div class="Detail_wrapper">
-            <h4 class="Detail_sectionTitle">事業概要</h4>
-          </div>
-          <table>
-            <tbody>
-              <tr>
-                <th>会社名</th>
-                <td>株式会社ひろしまインキュベーション&キャピタル</td>
-              </tr>
-              <tr>
-                <th>設立</th>
-                <td>2025年</td>
-              </tr>
-              <tr>
-                <th>所在地</th>
-                <td>〒739-0046 <br class="sp">広島県東広島市鏡山１丁目３−２ル</td>
-              </tr>
-              <tr>
-                <th>代表取締役</th>
-                <td>滝上 菊規　木村 嘉宏</td>
-              </tr>
-              <tr>
-                <th>監査役</th>
-                <td>名前が入ります</td>
-              </tr>
-              <tr>
-                <th>資本金</th>
-                <td>10億円</td>
-              </tr>
-              <tr>
-                <th>従業員数</th>
-                <td>10名</td>
-              </tr>
-              <tr>
-                <th>ミッション</th>
-                <td>「個々の遺伝情報を活用し、健康で豊かな社会を実現する」</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="Detail_banner">
-          <a href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/banner.png" alt="">
-          </a>
-        </section>
+        <?php get_template_part('components/companyInfo'); ?>
+        <?php get_template_part('components/companyBanner'); ?>
 
         <section class="Detail_media">
           <div class="Detail_wrapper">
-            <h4 class="Detail_sectionTitle">起業家ストーリー　</h4>
+            <h4 class="Detail_sectionTitle">ストーリー</h4>
             <ul class="MediaList">
-              <li class="item">
-                <a href="#">
-                  <figure class="image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/team_member_1.png" alt="ポートフォリオ1">
-                  </figure>
-                  <div class="texts">
-                    <p class="date">2025/1/11</p>
-                    <p class="category">起業家ストーリー</p>
-                    <p class="text">「精豆菌」で新たな市場を切り開く。「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱食糧危機に挑む起業家の情熱</p>
-                  </div>
-                </a>
-              </li>
-              <li class="item">
-                <a href="#">
-                  <figure class="image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/team_detail_member_1.png" alt="ポートフォリオ1">
-                  </figure>
-                  <div class="texts">
-                    <p class="date">2025/1/11</p>
-                    <p class="category">起業家ストーリー</p>
-                    <p class="text">「精豆菌」で新たな市場を切り開く。「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱食糧危機に挑む起業家の情熱</p>
-                  </div>
-                </a>
-              </li>
+              <?php
+              // 現在の投稿を除いて最新4件の起業家を取得
+              $related_columns = new WP_Query(array(
+                'post_type' => 'column',
+                'posts_per_page' => 4,
+                'post__not_in' => array(get_the_ID()),
+                'orderby' => 'date',
+                'order' => 'DESC'
+              ));
+
+              if ($related_columns->have_posts()) {
+                while ($related_columns->have_posts()) {
+                  $related_columns->the_post();
+                  $main_image = get_field('main_image');
+                  $categories = get_the_terms(get_the_ID(), 'column_category');
+              ?>
+                  <li class="item">
+                    <a href="<?php the_permalink(); ?>">
+                      <figure class="image">
+                        <?php if ($main_image) : ?>
+                          <img src="<?php echo esc_url($main_image); ?>" alt="<?php the_title_attribute(); ?>">
+                        <?php else : ?>
+                          <img src="<?php echo get_template_directory_uri(); ?>/dist/img/team_member_1.png" alt="<?php the_title_attribute(); ?>">
+                        <?php endif; ?>
+                      </figure>
+                      <div class="texts">
+                        <p class="date"><?php echo get_the_date('Y/n/j'); ?></p>
+                        <p class="category">
+                          <?php
+                          if ($categories && !is_wp_error($categories)) {
+                            echo esc_html($categories[0]->name);
+                          }
+                          ?>
+                        </p>
+                        <p class="text"><?php the_title(); ?></p>
+                      </div>
+                    </a>
+                  </li>
+              <?php
+                }
+                wp_reset_postdata();
+              } else {
+                echo '<li class="item">関連記事がありません。</li>';
+              }
+              ?>
             </ul>
           </div>
         </section>
@@ -143,19 +106,37 @@ Template Post Type: post
         <div class="PageNation">
           <ul class="list">
             <li class="item">
-              <a href="#" class="Button disabled">
-                前の記事
-              </a>
+              <?php
+              $prev_post = get_previous_post(true, '', 'column_category');
+              if ($prev_post) :
+              ?>
+                <a href="<?php echo get_permalink($prev_post->ID); ?>" class="Button">
+                  前の記事
+                </a>
+              <?php else : ?>
+                <span class="Button disabled">
+                  前の記事
+                </span>
+              <?php endif; ?>
             </li>
             <li class="item">
-              <a href="#" class="Button">
+              <a href="<?php echo home_url('/column/'); ?>" class="Button">
                 一覧に戻る
               </a>
             </li>
             <li class="item">
-              <a href="#" class="Button">
-                次の記事
-              </a>
+              <?php
+              $next_post = get_next_post(true, '', 'column_category');
+              if ($next_post) :
+              ?>
+                <a href="<?php echo get_permalink($next_post->ID); ?>" class="Button">
+                  次の記事
+                </a>
+              <?php else : ?>
+                <span class="Button disabled">
+                  次の記事
+                </span>
+              <?php endif; ?>
             </li>
           </ul>
         </div>

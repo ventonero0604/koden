@@ -68,19 +68,19 @@ function hic_img_url($filename = '')
 // カスタム投稿タイプの作成
 function hic_create_custom_post_types()
 {
-  // Member（メンバー）
-  register_post_type('member', array(
+  // Team（チーム）
+  register_post_type('team', array(
     'labels' => array(
-      'name' => 'メンバー',
-      'singular_name' => 'メンバー',
+      'name' => 'チーム',
+      'singular_name' => 'チーム',
       'add_new' => '新規追加',
-      'add_new_item' => 'メンバーを追加',
-      'edit_item' => 'メンバーを編集',
-      'new_item' => '新しいメンバー',
-      'view_item' => 'メンバーを表示',
-      'search_items' => 'メンバーを検索',
-      'not_found' => 'メンバーが見つかりません',
-      'not_found_in_trash' => 'ゴミ箱にメンバーはありません'
+      'add_new_item' => 'チームを追加',
+      'edit_item' => 'チームを編集',
+      'new_item' => '新しいチーム',
+      'view_item' => 'チームを表示',
+      'search_items' => 'チームを検索',
+      'not_found' => 'チームが見つかりません',
+      'not_found_in_trash' => 'ゴミ箱にチームはありません'
     ),
     'public' => true,
     'has_archive' => true,
@@ -267,6 +267,13 @@ add_action('init', 'hic_create_custom_taxonomies');
 // カスタム投稿タイプのリライトルールとページネーション設定
 function hic_custom_post_type_rewrite_rules()
 {
+  // チームアーカイブのページネーション
+  add_rewrite_rule(
+    '^team/page/([0-9]+)/?$',
+    'index.php?post_type=team&paged=$matches[1]',
+    'top'
+  );
+
   // ニュースアーカイブのページネーション
   add_rewrite_rule(
     '^news/page/([0-9]+)/?$',
@@ -285,6 +292,69 @@ function hic_custom_post_type_rewrite_rules()
   add_rewrite_rule(
     '^news_category/([^/]+)/page/([0-9]+)/?$',
     'index.php?news_category=$matches[1]&paged=$matches[2]',
+    'top'
+  );
+
+  // ポートフォリオアーカイブのページネーション
+  add_rewrite_rule(
+    '^portfolio/page/([0-9]+)/?$',
+    'index.php?post_type=portfolio&paged=$matches[1]',
+    'top'
+  );
+
+  // ポートフォリオカテゴリーアーカイブ
+  add_rewrite_rule(
+    '^portfolio_category/([^/]+)/?$',
+    'index.php?portfolio_category=$matches[1]',
+    'top'
+  );
+
+  // ポートフォリオカテゴリーアーカイブのページネーション
+  add_rewrite_rule(
+    '^portfolio_category/([^/]+)/page/([0-9]+)/?$',
+    'index.php?portfolio_category=$matches[1]&paged=$matches[2]',
+    'top'
+  );
+
+  // コラムアーカイブのページネーション
+  add_rewrite_rule(
+    '^column/page/([0-9]+)/?$',
+    'index.php?post_type=column&paged=$matches[1]',
+    'top'
+  );
+
+  // コラムカテゴリーアーカイブ
+  add_rewrite_rule(
+    '^column_category/([^/]+)/?$',
+    'index.php?column_category=$matches[1]',
+    'top'
+  );
+
+  // コラムカテゴリーアーカイブのページネーション
+  add_rewrite_rule(
+    '^column_category/([^/]+)/page/([0-9]+)/?$',
+    'index.php?column_category=$matches[1]&paged=$matches[2]',
+    'top'
+  );
+
+  // ストーリーアーカイブのページネーション
+  add_rewrite_rule(
+    '^story/page/([0-9]+)/?$',
+    'index.php?post_type=story&paged=$matches[1]',
+    'top'
+  );
+
+  // ストーリーカテゴリーアーカイブ
+  add_rewrite_rule(
+    '^story_category/([^/]+)/?$',
+    'index.php?story_category=$matches[1]',
+    'top'
+  );
+
+  // ストーリーカテゴリーアーカイブのページネーション
+  add_rewrite_rule(
+    '^story_category/([^/]+)/page/([0-9]+)/?$',
+    'index.php?story_category=$matches[1]&paged=$matches[2]',
     'top'
   );
 }
