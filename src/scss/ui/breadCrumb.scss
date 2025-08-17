@@ -17,6 +17,11 @@
   }
 
   .item + .item {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    display: inline-block;
     &:before {
       margin: 0 1rem;
       content: '>';

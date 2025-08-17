@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<?php get_template_part('components/head'); ?>
+
+<body>
+  <?php get_template_part('components/header'); ?>
+
+  <main class="Top">
+    <div class="movie">
+      <video src="<?php echo get_template_directory_uri(); ?>/dist/img/main.mp4" autoplay muted playsinline></video>
+    </div>
+
+    <div class="upper">
+      <section class="kv mincho">
+        <img src="<?php echo get_template_directory_uri(); ?>/dist/img/kv_logo.svg" alt="HIC" class="logo">
+        <h1 class="title">
+          挑む者達の足音が<br class="sp">聴こえる。
+        </h1>
+        <div class="texts">
+          <p class="text">
+            彼らはここから先、果てのない荒れた悪路を駆け上がる。<br>
+            一握の希望を手にして目を凝らし歩み進む。
+          </p>
+          <p class="text">
+            そして、魔の川は現れる。<br>
+            今まさに伏し、光を求める挑戦者がこの社会にどれほどいるだろうか。<br>
+          </p>
+          <p class="text">
+            我々は差し伸べる手と挑戦者<br>
+            を繋ぐ橋である。
+          </p>
+
+          <p class="text">
+            <em>胸に秘めた信念と仲間がいる限り、</em>
+          </p>
+        </div>
+      </section>
+
+
+      <div class="bg-white">
+        <section class="about">
+          <div class="Wrapper">
+            <div class="header">
+              <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" alt="HIC" class="logo">
+              <div class="texts mincho">
+                <h2 class="title">
+                  HICとは？
+                </h2>
+                <p class="text">
+                  当ファンドは、広島を中心とする中国・四国地域のスタートアップエコシステムの<br class="pc">
+                  構築や経済の発展を目的に設立し、<br class="pc">
+                  将来有望なスタートアップへの投資を行い、<br class="pc">
+                  スタートアップの成長を加速させます。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <ul class="items">
+              <li class="item">
+                <div class="object mincho">
+                  <p class="title">
+                    MISSION
+                  </p>
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_about_1.svg" alt="">
+                  <p class="text">
+                    地域活性化と<br>
+                    地域型スタートアップ<br>
+                    エコシステムの構築
+                  </p>
+                </div>
+                <p class="desc">
+                  スタートアップによる地域活性化の推進と雇用機会の増加を目指します。<br>
+                  地域型スタートアップエコシステムにおける資金循環の実現を目指します。
+                </p>
+              </li>
+              <li class="item">
+                <div class="object mincho">
+                  <p class="title">
+                    VISION
+                  </p>
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_about_2.svg" alt="">
+                  <p class="text">
+                    中国・四国地域を<br>
+                    産業イノベーション<br>
+                    発祥の拠点に
+                  </p>
+                </div>
+                <p class="desc">
+                  エコシステムを通じたヒト・モノ・カネ・情報の循環を促進します。<br>
+                  未来の街中にサイエンスパークを形成し、地域全体への貢献を目指します。
+                </p>
+              </li>
+              <li class="item">
+                <div class="object mincho">
+                  <p class="title">
+                    VALUE
+                  </p>
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_about_3.svg" alt="">
+                  <p class="text">
+                    投資活動を通じた<br>
+                    新産業の創出と<br>
+                    既存産業の革新
+                  </p>
+                </div>
+                <p class="desc">
+                  新規産業の創出や既存産業を支援する研究シーズの発掘に注力します。<br>
+                  起業・マーケット拡大に向けた多様な支援を行います。
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="support mincho">
+          <div class="Wrapper">
+            <h2 class="title">
+              <em>5</em>年間　<em>50</em>億円
+            </h2>
+            <p class="lead">
+              広島大学発スタートアップの成長基盤を多角的に支援
+            </p>
+            <ul class="items">
+              <li class="item">
+                <p class="itemTitle">
+                  広大関連<br>
+                  スタートアップ数
+                </p>
+                <p class="value">
+                  <em>
+                    000
+                  </em>
+                  社
+                  <span>以上</span>
+                </p>
+              </li>
+              <li class="item">
+                <p class="itemTitle">
+                  総時価総額
+                </p>
+                <p class="value">
+                  <em>
+                    000
+                  </em>
+                  兆円
+                  <span>以上</span>
+                </p>
+              </li>
+              <li class="item">
+                <p class="itemTitle">
+                  広大HIC<br>
+                  投資・支援先
+                </p>
+                <p class="value">
+                  <em>
+                    00
+                  </em>
+                  社
+                  <span>以上</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="portfolio">
+          <div class="Wrapper">
+            <h2 class="SectionTitle">
+              Portfolio
+            </h2>
+            <div class="content">
+              <div class="texts">
+                <h3 class="title mincho">
+                  投資活動を通じた新産業の創出と<br>
+                  既存産業の革新
+                </h3>
+                <p class="text">
+                  中国・四国地域を産業イノベーション発祥の拠点に！新規産業の創出や既存産業を支援する研究シーズの発掘に注力します。<br>
+                  起業・マーケット拡大に向けた多様な支援を行います。<br>
+                  特に、半導体、材料工学、通信/編集、再生医療、DX（デジタルトランスフォーメーション）、カーボンニュートラルといった分野での支援を重点的に実施しています。
+                </p>
+                <a href="#" class="ViewMore">VIEW MORE</a>
+              </div>
+              <figure class="image">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/img_portfolio.svg" alt="">
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <figure class="separator">
+          <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ttl_challenge.svg" alt="挑む者達の足音が聴こえる。" class="pc">
+          <p class="text mincho sp">
+            挑む者達の足音が<br>聴こえる。
+          </p>
+        </figure>
+
+        <section class="banners">
+          <div class="list-wrapper">
+            <ul class="list">
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+              <!-- 無限ループ用の複製 -->
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+              <li class="item">
+                <a href="/">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_pbio.png" alt="pbio">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="media">
+          <div class="Wrapper">
+            <h2 class="SectionTitle">
+              Media
+            </h2>
+            <div class="content">
+              <div class="header">
+                <h3 class="title mincho">ストーリー</h3>
+                <a href="#" class="ViewMore">VIEW MORE</a>
+              </div>
+              <ul class="list">
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_story_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_story_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_story_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_story_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="content">
+              <div class="header">
+                <h3 class="title mincho">コラム</h3>
+                <a href="#" class="ViewMore">VIEW MORE</a>
+              </div>
+              <ul class="list">
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_column_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_column_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_column_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_column_1.png" alt="">
+                    <p class="date">
+                      2025/1/11
+                    </p>
+                    <p class="label">
+                      起業家ストーリー
+                    </p>
+                    <p class="title">
+                      「精豆菌」で新たな市場を切り開く。食糧危機に挑む起業家の情熱
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="team">
+          <div class="Wrapper">
+            <div class="content">
+              <div class="texts">
+                <h2 class="SectionTitle">
+                  Team
+                </h2>
+                <h3 class="title mincho">多様な視点で、<br>
+                  事業を磨き上げる。</h3>
+                <p class="text">
+                  様々なバッググラウンドを持つメンバーが、<br>
+                  シード期から上場後までを見据えて、<br>
+                  ひとつひとつの事業を磨きあげていきます。
+                </p>
+                <a href="#" class="ViewMore">VIEW MORE</a>
+              </div>
+              <ul class="slider">
+                <li class="item">
+                  <a href="/">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_team_1.png" alt="">
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="/">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_team_1.png" alt="">
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="/">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/thumb_top_team_1.png" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="news">
+          <div class="Wrapper">
+            <h2 class="SectionTitle">
+              News
+            </h2>
+            <div class="content">
+              <ul class="list">
+                <li class="item">
+                  <a href="#">
+                    <p class="info">
+                      <span class="date">2025/1/24</span>
+                      <span class="category">イベント</span>
+                    </p>
+                    <p class="title">
+                      広島県が開催するグローバルイノベーションカンファレンス「SusHi Tech Hiroshima 2024 Global Startup Program」のアンバサダーに就任
+                    </p>
+                  </a>
+                </li>
+                <li class="item">
+                  <a href="#">
+                    <p class="info">
+                      <span class="date">2025/1/24</span>
+                      <span class="category">イベント</span>
+                    </p>
+                    <p class="title">
+                      OptQC株式会社への出資を決定 </p>
+                  </a>
+                </li>
+              </ul>
+              <a href="#news" class="ViewMore">VIEW MORE</a>
+            </div>
+          </div>
+        </section>
+
+        <?php get_template_part('components/participate'); ?>
+      </div>
+    </div>
+  </main>
+
+  <?php get_template_part('components/footer'); ?>
+
+  <?php wp_footer(); ?>
+</body>
+
+</html>

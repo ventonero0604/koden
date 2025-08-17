@@ -1,0 +1,183 @@
+<?php
+/*
+Template Name: ポートフォリオ一覧
+Template Post Type: page
+*/
+?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<?php get_template_part('components/head'); ?>
+
+<body>
+  <?php get_template_part('components/header'); ?>
+  <main class="Portfolio">
+    <?php get_template_part('components/breadcrumb'); ?>
+    <div class="PageHeader">
+      <h1 class="title">
+        <?php the_title(); ?>
+      </h1>
+    </div>
+    <div class="Wrapper">
+      <section class="content">
+        <div class="PageTitle">
+          <h2 class="title mincho">
+            研究とビジネスの架け橋として、<br>
+            多様な連携を推進。
+          </h2>
+        </div>
+        <ul class="Categories">
+          <li>
+            <a href="#">半導体</a>
+          </li>
+          <li>
+            <a href="#">材料工学</a>
+          </li>
+          <li>
+            <a href="#">ゲノム編集</a>
+          </li>
+          <li>
+            <a href="#">創薬</a>
+          </li>
+          <li class="noBorder">
+            <a href="#">再生医療</a>
+          </li>
+          <li>
+            <a href="#">DX</a>
+          </li>
+          <li>
+            <a href="#">カーボンニュートラル</a>
+          </li>
+        </ul>
+        <div class="items">
+          <div class="section">
+            <h3 class="itemsTitle mincho">
+              半導体
+            </h3>
+            <ul class="PortfolioList">
+              <li class="item">
+                <a href="#">
+                  <figure class="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo1.png" alt="ポートフォリオ1">
+                  </figure>
+                  <p class="name">会社名が入ります会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo2.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <figure class="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo1.png" alt="ポートフォリオ1">
+                  </figure>
+                  <p class="name">会社名が入ります会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo2.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="section">
+            <h3 class="itemsTitle mincho">
+              半導体
+            </h3>
+            <ul class="PortfolioList">
+              <li class="item">
+                <a href="#">
+                  <figure class="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo1.png" alt="ポートフォリオ1">
+                  </figure>
+                  <p class="name">会社名が入ります会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo2.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <figure class="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo1.png" alt="ポートフォリオ1">
+                  </figure>
+                  <p class="name">会社名が入ります会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo2.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/img/portfolio/logo3.png" alt="ポートフォリオ1">
+                  <p class="name">会社名が入ります</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <?php get_template_part('components/participate'); ?>
+  </main>
+
+  <?php get_template_part('components/footer'); ?>
+
+  <?php wp_footer(); ?>
+</body>
+
+</html>

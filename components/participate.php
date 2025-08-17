@@ -1,0 +1,33 @@
+<section class="Participate">
+  <div class="Wrapper">
+    <div class="container">
+      <h2 class="SectionTitle">
+        Participate
+      </h2>
+      <h3 class="title mincho">
+        HICに参加する
+      </h3>
+      <p class="text">
+        当ファンドは、広島を中心とする中国・四国地域のスタートアップエコシステムの構築や<br>
+        経済の発展を目的に設立されました。<br>
+        広島大学内のスタートアップ、投資家の皆さんを募集しています。
+      </p>
+    </div>
+    <ul class="links">
+      <li class="startup">
+        <p class="linkLead">広島大学発<span class="mincho">スタートアップ</span></p>
+        <a href="/contact/?type=startup" class="linkForm mincho">
+          応募フォーム
+          <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_arrow.svg" alt="">
+        </a>
+      </li>
+      <li class="investor">
+        <p class="linkLead">HICのスタートアップに興味のある<span class="mincho">投資家の皆さま</span></p>
+        <a href="/contact" class="linkForm mincho">
+          応募フォーム
+          <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_arrow.svg" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

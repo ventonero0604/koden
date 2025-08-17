@@ -73,12 +73,21 @@
     }
   }
 
-  .form {
+  form {
     border-top: 1px solid #898989;
     margin-top: 4rem;
     padding: 4rem 6rem 0;
     display: grid;
     gap: 3.2rem;
+
+    br {
+      display: none;
+    }
+
+    .wpcf7-form-control-wrap {
+      display: block;
+      margin-top: 1rem;
+    }
 
     @include sp {
       padding-inline: 0;
@@ -105,6 +114,7 @@
       textArea {
         border: 1px solid #393636;
         padding: 1.4rem;
+        width: 100%;
       }
 
       select {
@@ -114,6 +124,7 @@
         background-repeat: no-repeat;
         background-size: 1rem;
         padding-right: 4rem;
+        width: 100%;
       }
 
       .required {
@@ -130,8 +141,8 @@
       }
       .uploadLabel {
         font-size: 1.8rem;
-        text-decoration: underline;
       }
+
       .list {
         display: grid;
         gap: 0.6rem;
@@ -182,6 +193,12 @@
     margin-top: 2rem;
     @include sp {
       width: 100%;
+    }
+  }
+
+  .confirm {
+    br {
+      display: block;
     }
   }
 }

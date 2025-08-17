@@ -35,6 +35,13 @@
     }
   }
 
+  .wp-block-table td {
+    border: none;
+  }
+  .wp-block-table tr td:first-child {
+    width: 30%;
+  }
+
   &_summary {
     background: #fafafa;
     padding: 4rem 2rem;
