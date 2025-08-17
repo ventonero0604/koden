@@ -1,6 +1,6 @@
 <?php
 /*
-Template for News Archive
+Template for News Category Archive
 */
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ Template for News Archive
       <section class="content">
         <div class="PageTitle">
           <h2 class="title mincho">
-            ニュース
+            ニュース - <?php single_term_title(); ?>
           </h2>
           <p class="lead">
             株式会社ひろしまインキュベーション&キャピタルが行うイベントについてや活動報告、みなさまにお伝えしたいお知らせについて。
@@ -38,10 +38,16 @@ Template for News Archive
             'taxonomy' => 'news_category',
             'hide_empty' => true,
           ));
+          $current_term = get_queried_object();
           if ($news_categories && !is_wp_error($news_categories)) {
             foreach ($news_categories as $category) {
+              $is_current = ($current_term && $current_term->term_id === $category->term_id);
               echo '<li>';
-              echo '<a href="' . get_term_link($category) . '">' . esc_html($category->name) . '</a>';
+              if ($is_current) {
+                echo '<a href="' . get_term_link($category) . '" class="font-bold">' . esc_html($category->name) . '</a>';
+              } else {
+                echo '<a href="' . get_term_link($category) . '">' . esc_html($category->name) . '</a>';
+              }
               echo '</li>';
             }
           }
@@ -50,7 +56,7 @@ Template for News Archive
 
         <ul class="newsList">
           <?php
-          // WordPressの標準クエリを使用（archive.phpと同様）
+          // WordPressの標準クエリを使用
           if (have_posts()) {
             while (have_posts()) {
               the_post();
@@ -79,7 +85,7 @@ Template for News Archive
           <?php
             }
           } else {
-            echo '<li class="item">ニュースがありません。</li>';
+            echo '<li class="item">該当するニュースがありません。</li>';
           }
           ?>
         </ul>

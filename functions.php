@@ -264,14 +264,52 @@ function hic_create_custom_taxonomies()
 }
 add_action('init', 'hic_create_custom_taxonomies');
 
+// カスタム投稿タイプのリライトルールとページネーション設定
+function hic_custom_post_type_rewrite_rules()
+{
+  // ニュースアーカイブのページネーション
+  add_rewrite_rule(
+    '^news/page/([0-9]+)/?$',
+    'index.php?post_type=news&paged=$matches[1]',
+    'top'
+  );
+
+  // ニュースカテゴリーアーカイブ
+  add_rewrite_rule(
+    '^news_category/([^/]+)/?$',
+    'index.php?news_category=$matches[1]',
+    'top'
+  );
+
+  // ニュースカテゴリーアーカイブのページネーション
+  add_rewrite_rule(
+    '^news_category/([^/]+)/page/([0-9]+)/?$',
+    'index.php?news_category=$matches[1]&paged=$matches[2]',
+    'top'
+  );
+}
+add_action('init', 'hic_custom_post_type_rewrite_rules');
+
 // リライトルールをフラッシュ（テーマ有効化時に実行）
 function hic_flush_rewrite_rules()
 {
   hic_create_custom_post_types();
   hic_create_custom_taxonomies();
+  hic_custom_post_type_rewrite_rules();
   flush_rewrite_rules();
 }
 add_action('after_switch_theme', 'hic_flush_rewrite_rules');
+
+// カスタム投稿タイプの1ページあたりの表示件数設定
+function hic_custom_posts_per_page($query)
+{
+  if (!is_admin() && $query->is_main_query()) {
+    if (is_post_type_archive('news')) {
+      $query->set('posts_per_page', 10);
+    }
+  }
+}
+add_action('pre_get_posts', 'hic_custom_posts_per_page');
 
 // セキュリティ対策：直接アクセス禁止
 if (!defined('ABSPATH')) {
