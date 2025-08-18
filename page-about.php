@@ -148,7 +148,6 @@ Template Post Type: page
             <p class="lead">
               大学発スタートアップの成長支援を多角的に提供。経営アドバイス、市場分析、資金計画の強化で持続可能な成長を促進。<br>パートナー企業とのマッチング支援やマーケティング支援で事業拡大を加速します。
             </p>
-            <a href="/" class="btn">VIEW MORE</a>
           </div>
         </div>
         <div class="content">
@@ -160,7 +159,7 @@ Template Post Type: page
               様々なバッググラウンドを持つメンバーが、<br>
               ひとつひとつの事業を磨きあげていきます。
             </p>
-            <a href="/" class="btn">VIEW MORE</a>
+            <a href="<?php echo home_url('/team'); ?>" class="btn">VIEW MORE</a>
           </div>
           <img class="image" src="<?php echo get_template_directory_uri(); ?>/dist/img/about_team.png" alt="">
         </div>

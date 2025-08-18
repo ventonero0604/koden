@@ -8,48 +8,48 @@
         <div class="links">
           <ul class="pages">
             <li>
-              <a href="/about">HICとは</a>
+              <a href="<?php echo home_url('/about'); ?>">HICとは</a>
             </li>
             <!-- <li>
-              <a href="/portfolio">ポートフォリオ</a>
+              <a href="<?php echo home_url('/portfolio'); ?>">ポートフォリオ</a>
             </li> -->
             <li>
-              <a href="/team">チーム</a>
+              <a href="<?php echo home_url('/team'); ?>">チーム</a>
             </li>
           </ul>
           <!-- 
           <ul class="pages">
             <li>
-              <a href="/media">メディア</a>
+              <a href="<?php echo home_url('/media'); ?>">メディア</a>
             </li>
             <li>
-              <a href="/media/column">コラム</a>
+              <a href="<?php echo home_url('/media/column'); ?>">コラム</a>
               <ul class="details">
                 <li>
-                  <a href="/media/column/business-skills">ビジネススキル</a>
+                  <a href="<?php echo home_url('/media/column/business-skills'); ?>">ビジネススキル</a>
                 </li>
                 <li>
-                  <a href="/media/column/finance">ファイナンス</a>
+                  <a href="<?php echo home_url('/media/column/finance'); ?>">ファイナンス</a>
                 </li>
                 <li>
-                  <a href="/media/column/framework">フレームワーク</a>
+                  <a href="<?php echo home_url('/media/column/framework'); ?>">フレームワーク</a>
                 </li>
                 <li>
-                  <a href="/media/column/foundation-knowledge">会社設立の基礎知識</a>
+                  <a href="<?php echo home_url('/media/column/foundation-knowledge'); ?>">会社設立の基礎知識</a>
                 </li>
               </ul> 
             </li>
             <li>
-              <a href="/media/story">ストーリー</a>
+              <a href="<?php echo home_url('/media/story'); ?>">ストーリー</a>
                <ul class="details">
                 <li>
-                  <a href="/media/story/researcher">研究者ストーリー</a>
+                  <a href="<?php echo home_url('/media/story/researcher'); ?>">研究者ストーリー</a>
                 </li>
                 <li>
-                  <a href="/media/story/corporate">企業ストーリー</a>
+                  <a href="<?php echo home_url('/media/story/corporate'); ?>">企業ストーリー</a>
                 </li>
                 <li>
-                  <a href="/media/story/corporate">将来展望・想い</a>
+                  <a href="<?php echo home_url('/media/story/corporate'); ?>">将来展望・想い</a>
                 </li>
               </ul>
             </li>
@@ -57,10 +57,10 @@
           -->
           <ul class="pages">
             <li>
-              <a href="/news">NEWS</a>
+              <a href="<?php echo home_url('/news'); ?>">NEWS</a>
             </li>
             <li>
-              <a href="/contact">お問い合わせ</a>
+              <a href="<?php echo home_url('/contact'); ?>">お問い合わせ</a>
             </li>
           </ul>
         </div>

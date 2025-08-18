@@ -44,7 +44,7 @@ Template Post Type: page
             なお、お急ぎの場合は電話でもご相談を受け付けております。<br>
             00-0000-0000までご遠慮なくご相談ください。
           </p>
-          <a href="/" class="Button Button_red">TOPへ戻る</a>
+          <a href="<?php echo home_url(); ?>" class="Button Button_red">TOPへ戻る</a>
         </div>
       </section>
     </div>

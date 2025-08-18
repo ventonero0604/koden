@@ -7,40 +7,40 @@
   <div class="content">
     <ul class="links">
       <li>
-        <a href="/about">HICとは</a>
+        <a href="<?php echo home_url('/about'); ?>">HICとは</a>
       </li>
       <li>
-        <a href="/news">NEWS</a>
+        <a href="<?php echo home_url('/news'); ?>">NEWS</a>
       </li>
       <!-- <li>
-        <a href="/media">メディア</a>
+        <a href="<?php echo home_url('/media'); ?>">メディア</a>
       </li> -->
-      <li><a href="/contact">お問い合わせ</a></li>
+      <li><a href="<?php echo home_url('/contact'); ?>">お問い合わせ</a></li>
     </ul>
   </div>
   <div class="expand">
     <div class="wrapper">
       <ul class="details">
-        <li><a href="/about">HICとは</a>
+        <li><a href="<?php echo home_url('/about'); ?>">HICとは</a>
           <ul>
             <li>
-              <a href="/team">チーム</a>
+              <a href="<?php echo home_url('/team'); ?>">チーム</a>
             </li>
           </ul>
         </li>
-        <li><a href="/news">NEWS</a></li>
-        <li><a href="/contact">お問い合わせ</a></li>
-        <!-- <li><a href="/media">メディア</a>
+        <li><a href="<?php echo home_url('/news'); ?>">NEWS</a></li>
+        <li><a href="<?php echo home_url('/contact'); ?>">お問い合わせ</a></li>
+        <!-- <li><a href="<?php echo home_url('/media'); ?>">メディア</a>
           <ul>
             <li>
-              <a href="/media/column">コラム</a>
+              <a href="<?php echo home_url('/media/column'); ?>">コラム</a>
             </li>
             <li>
-              <a href="/media/story">ストーリー</a>
+              <a href="<?php echo home_url('/media/story'); ?>">ストーリー</a>
             </li>
           </ul>
         </li>
-        <li><a href="/portfolio">ポートフォリオ</a></li> -->
+        <li><a href="<?php echo home_url('/portfolio'); ?>">ポートフォリオ</a></li> -->
       </ul>
     </div>
   </div>

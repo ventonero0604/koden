@@ -393,7 +393,7 @@
                   シード期から上場後までを見据えて、<br>
                   ひとつひとつの事業を磨きあげていきます。
                 </p>
-                <a href="/team" class="ViewMore">VIEW MORE</a>
+                <a href="<?php echo home_url('/team'); ?>" class="ViewMore">VIEW MORE</a>
               </div>
               <ul class="slider">
                 <?php
@@ -499,7 +499,7 @@
                 }
                 ?>
               </ul>
-              <a href="/news" class="ViewMore">VIEW MORE</a>
+              <a href="<?php echo home_url('/news'); ?>" class="ViewMore">VIEW MORE</a>
             </div>
           </div>
         </section>
