@@ -93,4 +93,5 @@ button {
   top: var(--scroll-top, 0) !important;
   left: 0 !important;
   width: 100% !important;
+  overflow: hidden !important;
 }

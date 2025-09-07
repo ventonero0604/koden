@@ -48,11 +48,12 @@
     color: white;
     display: grid;
     place-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     opacity: 0;
     visibility: hidden;
@@ -119,16 +120,17 @@
     width: 3.8rem;
     height: 2.5rem;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 4.4rem;
     right: 3.6rem;
     display: block;
-    transform: translateY(-50%);
-    z-index: 9999;
+    z-index: 10000;
 
     @include sp {
       width: 3rem;
       height: 2.1rem;
+      top: 1.5rem;
+      right: 2rem;
     }
 
     &::before,

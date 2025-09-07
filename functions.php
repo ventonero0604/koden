@@ -32,12 +32,21 @@ function hic_enqueue_scripts()
     filemtime(get_template_directory() . '/dist/assets/css/style.css')
   );
 
+  // ScrollReveal CDN
+  wp_enqueue_script(
+    'scrollreveal',
+    'https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js',
+    array(),
+    '4.0.9',
+    true
+  );
+
   // メインJS
   if (file_exists(get_template_directory() . '/dist/assets/js/main.js')) {
     wp_enqueue_script(
       'hic-main-script',
       get_template_directory_uri() . '/dist/assets/js/main.js',
-      array(),
+      array('scrollreveal'),
       filemtime(get_template_directory() . '/dist/assets/js/main.js'),
       true
     );
