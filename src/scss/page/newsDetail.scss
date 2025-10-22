@@ -1,0 +1,90 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.NewsDetail {
+  padding: 0 2rem 10rem;
+  max-width: 110rem;
+  justify-self: center;
+  @include sp {
+    padding: 0 2rem 2rem;
+  }
+
+  .header {
+    margin: 6rem auto 0;
+    @include sp {
+      margin: 4rem auto 0;
+    }
+  }
+
+  .content {
+    max-width: 80rem;
+    margin-inline: auto;
+    line-height: 1.8;
+
+    > * {
+      margin-top: 4rem;
+      @include sp {
+        margin-top: 2rem;
+      }
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+
+      @include sp {
+        font-size: 2.5rem;
+        line-height: auto;
+      }
+    }
+  }
+
+  .footer {
+    display: grid;
+    place-items: center;
+    gap: 5rem;
+    margin-top: 10rem;
+    @include sp {
+      margin-top: 8rem;
+    }
+
+    .pages {
+      display: flex;
+      align-items: center;
+
+      a {
+        font-size: 2.7rem;
+        @include sp {
+          font-size: 1.5rem;
+        }
+      }
+
+      a + a {
+        &:before {
+          content: '|';
+          margin-left: 4rem;
+          margin-right: 4rem;
+          @include sp {
+            margin-left: 2rem;
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .NewsList {
+    margin-top: 10rem;
+    gap: 2rem;
+    padding-inline: 0;
+    @include sp {
+      margin-top: 6rem;
+    }
+
+    .title {
+      font-size: 4rem;
+      @include sp {
+        font-size: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use '../foundation/breakPoint.scss' as *;
+
+.Card {
+  background: white;
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16);
+  border-radius: 1.6;
+  margin-top: 11rem;
+  padding: 6rem 2rem;
+  border-radius: 2rem;
+  display: grid;
+  gap: 4rem;
+
+  @include sp {
+    width: 33.5rem;
+    padding-block: 4rem;
+    margin-top: 4rem;
+    place-self: center;
+  }
+
+  .content {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+
+    @include sp {
+      flex-direction: column;
+      .image {
+        width: 10.6rem;
+      }
+    }
+
+    .texts {
+      width: 48.5rem;
+      font-size: 2rem;
+      @include sp {
+        width: 29.5rem;
+        font-size: 1.8rem;
+        img {
+          height: 3rem;
+          margin-inline: auto;
+        }
+      }
+
+      .lead {
+        font-weight: 500;
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+        @include sp {
+          font-size: 2.5rem;
+          text-align: center;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  @include sp {
+    .Button {
+      width: 29.5rem;
+    }
+  }
+}

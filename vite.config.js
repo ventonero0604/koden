@@ -46,20 +46,10 @@ export default defineConfig({
       },
       input: {
         index: resolve(__dirname, root, 'index.html'),
-        about: resolve(__dirname, root, 'about.html'),
-        cms: resolve(__dirname, root, 'cms.html'),
-        contact: resolve(__dirname, root, 'contact.html'),
-        contact_complete: resolve(__dirname, root, 'contact_complete.html'),
-        contact_detail: resolve(__dirname, root, 'contact_detail.html'),
-        media: resolve(__dirname, root, 'media.html'),
-        media_detail: resolve(__dirname, root, 'media_detail.html'),
-        media_list: resolve(__dirname, root, 'media_list.html'),
+        exhibition: resolve(__dirname, root, 'exhibition.html'),
+        gallery: resolve(__dirname, root, 'gallery.html'),
         news: resolve(__dirname, root, 'news.html'),
-        news_detail: resolve(__dirname, root, 'news_detail.html'),
-        portfolio: resolve(__dirname, root, 'portfolio.html'),
-        portfolio_detail: resolve(__dirname, root, 'portfolio_detail.html'),
-        team: resolve(__dirname, root, 'team.html'),
-        team_detail: resolve(__dirname, root, 'team_detail.html')
+        news_detail: resolve(__dirname, root, 'news_detail.html')
       }
     }
   },

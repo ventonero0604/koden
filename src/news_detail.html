@@ -3,52 +3,81 @@
 <body>
   {{> header}}
 
-  <main class="Detail">
-    {{> breadCrumb}}
-    {{> pageHeader}}
+  <main class="Pages">
+    <nav class="BreadCrumb">
+      <ul class="list">
+        <li><a href="/">TOP</a></li>
+        <li><a href="/">NEWS</a></li>
+        <li>NEWタイトルが入ります</li>
+      </ul>
+    </nav>
+    <section class="NewsDetail">
+      <h2 class="SectionTitle">
+        <img src="./img/ttl_news.svg" alt="NEWS">
+        お知らせ
+      </h2>
 
-    <div class="content">
-      <div class="Wrapper">
-        <section class="Detail_header">
-          <h2 class="title">
-            タイトルが入ります。あなたのDNAが拓く未来、健康と可能性を支えるあなたのDNAが拓く未来、健康と可能性を支える企業
-          </h2>
-          <p class="info">
-            <span>2025/1/11</span>
-            <span>ストーリー</span>
-          </p>
-        </section>
-
-        <section class="Cms">
-          <p>hoge</p>
-        </section>
-
-        <div class="PageNation separator">
-          <ul class="list">
-            <li class="item">
-              <a href="#" class="Button disabled">
-                前の記事
-              </a>
-            </li>
-            <li class="item">
-              <a href="#" class="Button">
-                一覧に戻る
-              </a>
-            </li>
-            <li class="item">
-              <a href="#" class="Button">
-                次の記事
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div class="header">
+        <img src="./img/exhibition/chugoku.png" alt="">
       </div>
-    </div>
 
+      <div class="content">
+        <h1>
+          NEWタイトルが入ります
+        </h1>
+        <p>
+          NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。NEWの詳細が入ります。
+        </p>
+      </div>
 
-    {{> participate}}
+      <div class="footer">
+        <div class="pages">
+          <a href="./news_detail.html">前の記事を読む</a>
+          <a href="./news_detail.html">次の記事を読む</a>
+        </div>
+        <a href="./news.html" class="Button">NEWS一覧に戻る</a>
+      </div>
+
+      <div class="NewsList">
+        <h3 class="title">
+          最新のNEWS
+        </h3>
+        <ul class="list">
+          <li>
+            <a href="./news_detail.html">
+              <span class="date">
+                2025.00.00
+              </span>
+              <span class="text">
+                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="./news_detail.html">
+              <span class="date">
+                2025.00.00
+              </span>
+              <span class="text">
+                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="./news_detail.html">
+              <span class="date">
+                2025.00.00
+              </span>
+              <span class="text">
+                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
   </main>
-
   {{> footer}}
 
   <script type="module" src="./js/main.js"></script>

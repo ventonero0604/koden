@@ -1,34 +1,19 @@
 @use '../foundation/breakPoint.scss' as *;
 
 .Button {
-  border: 0.1rem solid #333333;
-  width: 14.6rem;
-  height: 5.8rem;
+  background: black;
+  color: white;
   display: grid;
   place-items: center;
-  transition: all 0.2s ease;
+  width: 42.3rem;
+  height: 6.4rem;
+  border-radius: 100vh;
+  font-size: 2rem;
+  margin-inline: auto;
 
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &.disabled {
-    opacity: 0.4;
-    pointer-events: none;
-  }
-
-  &_red {
-    background: var(--primary);
-    color: white;
-    border: unset;
-    @include sp {
-      width: 100%;
-    }
-    &[disabled] {
-      background: #ccc;
-      color: #888;
-      opacity: 0.6;
-      pointer-events: none;
-    }
+  @include sp {
+    width: 33.5rem;
+    height: 6rem;
+    font-size: 1.8rem;
   }
 }

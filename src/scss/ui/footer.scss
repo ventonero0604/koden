@@ -1,86 +1,49 @@
 @use '../foundation/breakPoint.scss' as *;
 
 .Footer {
-  padding: 5rem 0 3rem;
-  background: white;
+  padding: 8rem 2rem;
+  background: var(--primary);
+  color: white;
   position: relative;
+  text-align: center;
+  @include sp {
+    padding: 7rem 2rem;
+  }
 
   .contents {
     display: grid;
     place-items: center;
     position: relative;
+    gap: 7rem;
+    @include sp {
+      gap: 6rem;
+    }
   }
 
-  .container {
-    display: flex;
-    justify-content: center;
-    gap: 12rem;
-    margin-left: -20rem;
-    @include sp {
-      flex-direction: column;
-      margin-left: unset;
-      align-items: center;
-      gap: 4rem;
-
-      .logo {
-        img {
-          width: 15rem;
-        }
-      }
-    }
+  .hiroshima {
+    width: 27rem;
   }
 
   .links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5rem;
+    display: flex;
+    gap: 2.7rem;
     @include sp {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      text-align: center;
+      flex-direction: column;
     }
 
-    .pages {
-      li + li {
-        margin-top: 1rem;
-      }
-      a {
-        font-weight: bold;
-        font-size: 1.4rem;
-        @include sp {
-          font-size: 1.6rem;
-        }
-      }
-    }
-    .details {
-      margin-top: 0.5rem;
-      line-height: 1.5;
+    a {
+      font-size: 1.7rem;
       @include sp {
-        text-align: left;
-      }
-
-      li + li {
-        margin-top: 0;
-      }
-      a {
-        font-weight: normal;
-        color: #5f5f5f;
-        font-size: 1.2rem;
-        @include sp {
-          font-size: 1.4rem;
-        }
-        &:before {
-          content: '-';
-          margin-right: 0.5rem;
-        }
+        font-size: 1.6rem;
       }
     }
   }
 
+  .logo {
+    width: 109rem;
+  }
+
   small {
-    margin-top: 4rem;
-    font-size: 1rem;
-    color: #5f5f5f;
-    text-align: center;
+    font-size: 1.7rem;
   }
 }

@@ -1,131 +1,5 @@
 import $ from 'jquery';
 
-// ScrollReveal初期化
-document.addEventListener('DOMContentLoaded', function () {
-  if (typeof ScrollReveal !== 'undefined') {
-    // ScrollReveal初期化
-    const sr = ScrollReveal({
-      origin: 'bottom',
-      distance: '60px',
-      duration: 800,
-      delay: 200,
-      reset: false,
-      easing: 'ease-out'
-    });
-
-    // 各セクションにアニメーション適用
-
-    // KVセクション
-    sr.reveal('.kv .logo', {
-      delay: 300,
-      distance: '30px'
-    });
-
-    sr.reveal('.kv .title', {
-      delay: 500,
-      distance: '30px'
-    });
-
-    sr.reveal('.kv .texts .text', {
-      delay: 100,
-      interval: 200
-    });
-
-    // Aboutセクション
-    // sr.reveal('.about .header', {
-    //   distance: '50px'
-    // });
-
-    sr.reveal('.about .items .item', {
-      interval: 300,
-      distance: '40px'
-    });
-
-    // Supportセクション
-    sr.reveal('.support .title', {
-      distance: '30px'
-    });
-
-    sr.reveal('.support .lead', {
-      delay: 300,
-      distance: '30px'
-    });
-
-    // Portfolioセクション
-    sr.reveal('.portfolio .SectionTitle', {
-      distance: '30px'
-    });
-
-    sr.reveal('.portfolio .texts', {
-      origin: 'left',
-      distance: '60px',
-      delay: 200
-    });
-
-    sr.reveal('.portfolio .image', {
-      origin: 'right',
-      distance: '60px',
-      delay: 400
-    });
-
-    // Separatorセクション
-    sr.reveal('.separator', {
-      distance: '30px',
-      scale: 0.9
-    });
-
-    // Teamセクション
-    sr.reveal('.team .SectionTitle', {
-      distance: '30px'
-    });
-
-    sr.reveal('.team .texts', {
-      origin: 'left',
-      distance: '60px',
-      delay: 200
-    });
-
-    sr.reveal('.team .slider .item', {
-      origin: 'bottom',
-      distance: '40px',
-      interval: 150,
-      delay: 400
-    });
-
-    // Newsセクション
-    sr.reveal('.news .SectionTitle', {
-      distance: '30px'
-    });
-
-    sr.reveal('.news .list .item', {
-      interval: 200,
-      distance: '40px'
-    });
-
-    sr.reveal('.news .ViewMore', {
-      delay: 600,
-      distance: '30px'
-    });
-
-    // Participateセクション
-    // sr.reveal('.Participate .container', {
-    //   distance: '50px'
-    // });
-
-    sr.reveal('.Participate .links .startup', {
-      origin: 'left',
-      distance: '60px',
-      delay: 200
-    });
-
-    sr.reveal('.Participate .links .investor', {
-      origin: 'right',
-      distance: '60px',
-      delay: 400
-    });
-  }
-});
-
 // ハンバーガーメニューの実装
 $(document).ready(function () {
   let scrollTop = 0;
@@ -172,14 +46,39 @@ $(document).ready(function () {
     }
   });
 
-  // URLパラメータをチェックして属性を自動選択
-  if ($('.Contact').length) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const type = urlParams.get('type');
+  // モーダル機能
+  $('.js-modal').on('click', function () {
+    // 同じli内のfigure.imageのimg要素を取得
+    const $li = $(this).closest('li');
+    const $img = $li.find('figure.image img');
+    const imgSrc = $img.attr('src');
+    const imgAlt = $img.attr('alt');
 
-    if (type === 'startup') {
-      // スタートアップが選択された場合、属性セレクトボックスを自動選択
-      $('#userType').val('startup');
+    if (imgSrc) {
+      // モーダルに画像をセット
+      $('#modal-image').attr('src', imgSrc).attr('alt', imgAlt);
+      $('#image-modal').addClass('is-open');
+
+      // 背景スクロールを無効化（簡略版）
+      $('body').css('overflow', 'hidden');
     }
-  }
+  });
+
+  // モーダルを閉じる
+  $('.modal-close, .modal').on('click', function (e) {
+    if (e.target === this) {
+      $('#image-modal').removeClass('is-open');
+
+      // 背景スクロールを復元
+      $('body').css('overflow', '');
+    }
+  });
+
+  // ESCキーでモーダルを閉じる
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape' && $('#image-modal').hasClass('is-open')) {
+      $('#image-modal').removeClass('is-open');
+      $('body').css('overflow', '');
+    }
+  });
 });
