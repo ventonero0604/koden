@@ -1,6 +1,14 @@
 {{> head}}
 
 <body>
+  <!-- ローディング画面 -->
+  <div class="Loading">
+    <div class="Loading_logo">
+      <img src="./img/logo_gray.svg" alt="HIRODEN ART TRAM" class="logo-base">
+      <img src="./img/logo_gray.svg" alt="HIRODEN ART TRAM" class="logo-white">
+    </div>
+  </div>
+
   {{> header}}
 
   <main class="Top">
@@ -17,13 +25,16 @@
           現在開催中の展示
         </h2>
         <a href="./exhibition.html" class="image">
-          <img src="./img/exhibition/80years.png" alt="広島電鉄">
+          <img src="./img/exhibition/yasuda.png" alt="広島電鉄">
         </a>
         <div class="navi">
-          <p class="title">
-            現在の展示作品
-          </p>
-          <a href="./exhibition.html" class="Button">広島電鉄「被爆80年展」</a>
+          <a href="./exhibition.html" class="Button">
+            現在開催中の展示を見る
+            <span class="arrow-icon">
+              <img src="./img/ico_button_arrow.svg" alt="→">
+            </span>
+          </a>
+
         </div>
       </div>
     </section>
@@ -33,24 +44,46 @@
         <img src="./img/ttl_archive.svg" alt="ARCHIVE">
         これまでの展示作品
       </h2>
-      <ul class="list">
-        <li>
-          <a href="./gallery.html">
-            <img src="./img/exhibition/utagawa.png" alt="">
-          </a>
-        </li>
-        <li>
-          <a href="./gallery.html">
-            <img src="./img/exhibition/chugoku.png" alt="">
-          </a>
-        </li>
-        <li>
-          <a href="./gallery.html">
-            <img src="./img/exhibition/kodomo.png" alt="">
-          </a>
-        </li>
-      </ul>
-      <a href="./exhibition.html" class="Button">過去の展示を見る</a>
+      <div class="swiper archive-swiper">
+        <ul class="swiper-wrapper list">
+          <li class="swiper-slide">
+            <a href="./gallery.html">
+              <img src="./img/exhibition/archive_01.png" alt="">
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="./gallery.html">
+              <img src="./img/exhibition/archive_02.png" alt="">
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="./gallery.html">
+              <img src="./img/exhibition/archive_03.png" alt="">
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="./gallery.html">
+              <img src="./img/exhibition/archive_04.png" alt="">
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="./gallery.html">
+              <img src="./img/exhibition/archive_05.png" alt="">
+            </a>
+          </li>
+        </ul>
+        <!-- ナビゲーションボタン -->
+        <div class="swiper-button-prev archive-button-prev"></div>
+        <div class="swiper-button-next archive-button-next"></div>
+        <!-- ページネーション -->
+        <div class="swiper-pagination archive-pagination"></div>
+      </div>
+      <a href="./exhibition.html" class="Button">
+        過去の展示を見る
+        <span class="arrow-icon">
+          <img src="./img/ico_button_arrow.svg" alt="→">
+        </span>
+      </a>
     </section>
 
     <section class="Nowhere" id="nowhere">
@@ -68,9 +101,10 @@
         </p>
       </div>
 
-      <figure class="map">
-        <img src="./img/map.png" alt="走行位置情報">
-      </figure>
+      <div class="map">
+        <iframe src="https://doconeel.com/hiroden/map.php?member=1&map=1" width="100%" height="400"
+          frameborder="0"></iframe>
+      </div>
 
       <div class="info Wrapper">
         <h4 class="lines">運行路線</h4>
@@ -98,7 +132,10 @@
         </small>
       </div>
 
-      <div class="Wrapper">
+      <div class="cardWrapper Wrapper">
+        <figure class="bg_left">
+          <img src="./img/ico_arttrain.svg" alt="">
+        </figure>
         <aside class="Card">
           <div class="content">
             <figure class="image">
@@ -115,8 +152,16 @@
               </p>
             </div>
           </div>
-          <a href="#" class="Button">アンケートはこちら</a>
+          <a href="#" class="Button">
+            アンケートはこちら
+            <span class="arrow-icon">
+              <img src="./img/ico_button_arrow.svg" alt="→">
+            </span>
+          </a>
         </aside>
+        <figure class="bg_right">
+          <img src="./img/bg_arttrain.png" alt="">
+        </figure>
       </div>
     </section>
 
@@ -132,10 +177,11 @@
               <span class="date">
                 2025.00.00
               </span>
+              <span class="label">
+                展示
+              </span>
               <span class="text">
-                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
-                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
-                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
+                旅する書とデザイン -安田女子大学 造形デザイン学科- 開催中
               </span>
             </a>
           </li>
@@ -144,9 +190,11 @@
               <span class="date">
                 2025.00.00
               </span>
-              <span class="text">
-                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
+              <span class="label">
+                展示
               </span>
+              <span class="text">
+                過去展示情報アーカイブをご確認いただけます。 </span>
             </a>
           </li>
           <li>
@@ -154,8 +202,11 @@
               <span class="date">
                 2025.00.00
               </span>
+              <span class="label">
+                お知らせ
+              </span>
               <span class="text">
-                お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。お知らせが入ります。
+                走る美術館のサイトを公開しました。
               </span>
             </a>
           </li>
@@ -169,7 +220,7 @@
       </figure>
       <div class="texts">
         <h3 class="title">
-          <img src="./img/ttl_arttrain.svg" alt="HIRODEN ART TRAIN">
+          <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
         </h3>
         <p class="lead">
           文化・芸術をもっと<br>
@@ -177,10 +228,10 @@
           それが走る美術館です。
         </p>
         <p class="name">
-          車両
           <span>
-            グリーンムーバーLEX（1018号）　
+            車両
           </span>
+          グリーンムーバーLEX（1018号）　
         </p>
         <p class="text">
           キャンバスをイメージした真っ白のデザインにロゴをあしらい、どのような芸術作品でも馴染み、<br>
@@ -220,7 +271,7 @@
     </section>
 
     <figure class="Separator">
-      <img src="./img/txt_art_tram.png" alt="HIRODEN ART TRAM">
+      <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
     </figure>
 
   </main>

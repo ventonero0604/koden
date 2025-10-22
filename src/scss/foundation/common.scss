@@ -8,6 +8,10 @@ html {
   @include sp {
     font-size: vwsp(10);
   }
+
+  @include pc {
+    font-size: vwpc(10);
+  }
 }
 
 body {

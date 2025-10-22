@@ -1,7 +1,10 @@
 @use '../foundation/breakPoint.scss' as *;
 
 .Gallery {
-  padding: 0 0 10rem;
+  padding: 0 0 16rem;
+  @include sp {
+    padding: 0 0 10rem;
+  }
 
   .main {
     max-width: 114.5rem;
@@ -11,7 +14,7 @@
     gap: 3rem;
     @include sp {
       padding: 0;
-      margin-top: 4rem;
+      margin-top: 2rem;
 
       .image {
         img {
@@ -120,8 +123,26 @@
       }
     }
   }
-  .Button {
+  .buttons {
     margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 4rem;
+    margin-inline: auto;
+
+    @include sp {
+      margin-top: 4rem;
+      padding-inline: 2rem;
+      width: 100%;
+    }
+    .Button {
+      width: 100%;
+      white-space: wrap;
+      @include sp {
+        max-width: 100%;
+      }
+    }
   }
 }
 

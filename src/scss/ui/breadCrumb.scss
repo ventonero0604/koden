@@ -16,12 +16,19 @@
 
     @include sp {
       font-size: 1.2rem;
+      flex-wrap: wrap;
+      display: inline-flex;
+      gap: 0 1rem;
     }
 
-    li + li {
-      &:before {
+    li {
+      &:after {
         content: '-';
-        margin-right: 1rem;
+        margin-left: 1rem;
+      }
+
+      &:last-of-type:after {
+        display: none;
       }
     }
   }

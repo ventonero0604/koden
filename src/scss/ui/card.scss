@@ -4,7 +4,6 @@
   background: white;
   box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16);
   border-radius: 1.6;
-  margin-top: 11rem;
   padding: 6rem 2rem;
   border-radius: 2rem;
   display: grid;
@@ -13,8 +12,6 @@
   @include sp {
     width: 33.5rem;
     padding-block: 4rem;
-    margin-top: 4rem;
-    place-self: center;
   }
 
   .content {

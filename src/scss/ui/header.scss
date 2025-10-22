@@ -1,8 +1,8 @@
 @use '../foundation/breakPoint.scss' as *;
 
 .Header {
-  height: 11rem;
-  padding: 0 12rem 0 4rem;
+  height: 8.2rem;
+  padding: 1.2rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,6 @@
   left: 0;
   z-index: 2;
   background: #fdfcf8;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   @include pc {
     padding: 0 4rem;
@@ -45,7 +44,7 @@
       display: flex;
       align-items: center;
       gap: 3rem;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       white-space: nowrap;
 
       @include sp {

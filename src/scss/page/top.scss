@@ -1,10 +1,91 @@
 @use '../foundation/breakPoint.scss' as *;
 
+// ローディング画面
+.Loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #bebebe;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.hide {
+    animation: loadingHide 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  &_logo {
+    width: 70rem;
+    position: relative;
+
+    @include sp {
+      width: 80%;
+      max-width: 35rem;
+    }
+
+    .logo-base {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .logo-white {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      filter: brightness(0) invert(1);
+      clip-path: inset(0 100% 0 0);
+    }
+
+    &.fill {
+      .logo-white {
+        animation: logoFillClip 0.8s linear forwards;
+      }
+    }
+
+    &.slide-up {
+      animation: logoMaskOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+  }
+}
+
+@keyframes logoFillClip {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes logoMaskOut {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+@keyframes loadingHide {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 .Top {
   .Kv {
     .movie {
       width: 100%;
-      height: 600px;
+      height: 100vh;
       video {
         object-fit: cover;
         width: 100%;
@@ -30,6 +111,35 @@
     .image {
       border: 1px solid #707070;
       display: block;
+      aspect-ratio: 1000/570;
+      background: white;
+      overflow: hidden;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        transform-origin: right center;
+        transform: scaleX(1);
+        z-index: 1;
+      }
+
+      &.reveal-mask {
+        &::after {
+          animation: exhibitionMaskSlide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+      }
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .navi {
@@ -38,18 +148,6 @@
         display: grid;
         place-items: center;
         gap: 2rem;
-      }
-
-      .title {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        @include sp {
-          position: static;
-          transform: none;
-          text-align: center;
-        }
       }
     }
   }
@@ -65,23 +163,114 @@
       gap: 4rem;
     }
 
-    .list {
-      display: flex;
-      overflow-x: scroll;
-      gap: 2rem;
-      padding-bottom: 4rem;
+    .archive-swiper {
+      width: 100%;
+      overflow: hidden;
+      padding-bottom: 6rem;
+      position: relative;
       @include sp {
-        padding-bottom: 2rem;
+        padding-bottom: 5rem;
+      }
+    }
+
+    .archive-button-prev,
+    .archive-button-next {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      color: gray;
+
+      &:after {
+        font-size: 1.6rem;
       }
 
-      a {
-        flex-shrink: 0;
+      &:hover {
+        opacity: 0.7;
+      }
+
+      @include sp {
+        display: none;
+      }
+    }
+
+    .archive-pagination {
+      bottom: 0 !important;
+    }
+  }
+
+  // Swiperページネーションのスタイル
+  .archive-swiper {
+    .swiper-pagination-bullet {
+      width: 1rem;
+      height: 1rem;
+      background: #ccc;
+      opacity: 1;
+
+      &.swiper-pagination-bullet-active {
+        background: #000;
+      }
+    }
+
+    .list {
+      display: flex;
+
+      .swiper-slide {
         width: 56rem;
-        display: block;
+        flex-shrink: 0;
+
         @include sp {
           width: 29.5rem;
         }
+
+        a {
+          display: block;
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            transform-origin: right center;
+            transform: scaleX(1);
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+
+        &.slide-visible {
+          a::after {
+            animation: maskSlideLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          }
+        }
       }
+    }
+  }
+
+  @keyframes maskSlideLeft {
+    0% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes exhibitionMaskSlide {
+    0% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
     }
   }
 
@@ -193,6 +382,31 @@
         }
       }
     }
+
+    .cardWrapper {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-top: 11rem;
+      @include sp {
+        margin-top: 4rem;
+        place-self: center;
+      }
+
+      .bg_left {
+        width: 23rem;
+        @include sp {
+          display: none;
+        }
+      }
+
+      .bg_right {
+        width: 25.5rem;
+        @include sp {
+          display: none;
+        }
+      }
+    }
   }
 
   .NewsSec {
@@ -216,9 +430,6 @@
 
     .bg {
       width: 25.5rem;
-      @include mid {
-        display: none;
-      }
       @include sp {
         display: none;
       }
@@ -237,6 +448,7 @@
       .lead {
         font-size: 3.6rem;
         margin-top: 5rem;
+        font-weight: 600;
         @include sp {
           font-size: 2.5rem;
           margin-top: 2rem;
@@ -245,8 +457,8 @@
       .name {
         display: flex;
         align-items: center;
-        gap: 2rem;
-        font-size: 2rem;
+        gap: 1.4rem;
+        font-size: 2.6rem;
         line-height: 1;
         margin-top: 5rem;
         @include sp {
@@ -257,16 +469,17 @@
           margin-top: 2rem;
         }
         span {
-          font-size: 2.6rem;
+          font-size: 1.2rem;
           line-height: 1;
-          @include sp {
-            font-size: 2rem;
-          }
+          border: 1px solid #707070;
+          color: #707070;
+          padding: 0.4rem 1.2rem;
         }
       }
       .text {
-        margin-top: 2rem;
-        font-size: 2rem;
+        margin-top: 3rem;
+        font-size: 1.8rem;
+        line-height: 2;
         width: 47rem;
         @include sp {
           width: 100%;
@@ -290,9 +503,9 @@
     }
     .list {
       display: grid;
+      justify-content: center;
       gap: 2rem;
-      grid-template-columns: repeat(3, 1fr);
-      max-width: 1100px;
+      grid-template-columns: repeat(3, 35.3rem);
       margin: 4rem auto 0;
       @include sp {
         grid-template-columns: 1fr;
@@ -307,7 +520,6 @@
         box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16);
         border-radius: 1rem;
         padding: 2.4rem;
-        max-width: 35.3rem;
         @include sp {
           height: 30rem;
         }
@@ -319,9 +531,55 @@
         }
       }
     }
+    .image {
+      img {
+        height: 7.5rem;
+      }
+    }
   }
 
   .Separator {
     margin-bottom: 4rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    img {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+
+    &.train-running {
+      img {
+        animation: trainRun 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+        animation-delay: 0s;
+      }
+    }
+  }
+
+  @keyframes trainRun {
+    0% {
+      opacity: 1;
+      transform: translateX(100%);
+      animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    25% {
+      opacity: 1;
+      transform: translateX(0);
+      animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-100%);
+      animation-timing-function: linear;
+    }
+    50.1% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
   }
 }
