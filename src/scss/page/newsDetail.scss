@@ -10,15 +10,62 @@
 
   .header {
     margin: 6rem auto 0;
+    width: 100rem;
+    height: 57rem;
+    background: white;
+    border: 1px solid #707070;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
     @include sp {
       margin: 4rem auto 0;
+      width: 100%;
+      height: 20rem;
+    }
+  }
+
+  .info {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 4rem;
+    max-width: 80rem;
+    margin-inline: auto;
+
+    @include sp {
+      margin-top: 2rem;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .date {
+      color: #ababab;
+    }
+    .Label {
+      height: 3.6rem;
+      padding: 0.4rem 3rem;
+      width: unset;
+      line-height: 1;
+      @include sp {
+        height: 2rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+    .date,
+    .Label {
+      font-size: 1.8rem;
+      @include sp {
+        font-size: 1.2rem;
+      }
     }
   }
 
   .content {
     max-width: 80rem;
     margin-inline: auto;
-    line-height: 1.8;
+    line-height: 2;
 
     > * {
       margin-top: 4rem;
@@ -30,10 +77,11 @@
     h1 {
       font-size: 4rem;
       text-align: center;
-
+      line-height: 1.6;
+      padding-bottom: 4rem;
       @include sp {
         font-size: 2.5rem;
-        line-height: auto;
+        padding-bottom: 2rem;
       }
     }
   }

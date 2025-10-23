@@ -25,6 +25,10 @@ body {
   font-size: 1.7rem;
 }
 
+main {
+  overflow: hidden;
+}
+
 a {
   transition: all 0.2s;
   &:hover {

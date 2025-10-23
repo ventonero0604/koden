@@ -30,6 +30,7 @@
       width: 100%;
       height: auto;
       display: block;
+      filter: brightness(0.95) contrast(0.9);
     }
 
     .logo-white {
@@ -315,12 +316,14 @@
     .map {
       margin: 4rem 0;
       width: 100%;
+      height: 65rem;
       @include sp {
         margin: 3rem 0;
         width: 100vw;
         margin-left: calc(-50vw + 50%);
+        height: 30rem;
       }
-      img {
+      iframe {
         object-fit: cover;
         width: 100%;
         height: 100%;
@@ -388,20 +391,25 @@
       align-items: center;
       gap: 4rem;
       margin-top: 11rem;
+      position: relative;
+
       @include sp {
         margin-top: 4rem;
         place-self: center;
+        padding: 0;
       }
 
-      .bg_left {
-        width: 23rem;
-        @include sp {
-          display: none;
-        }
-      }
-
-      .bg_right {
-        width: 25.5rem;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -10%;
+        left: 0;
+        width: 40rem;
+        height: 60rem;
+        background: center/cover no-repeat url('../../img/bg_object_1.svg');
+        z-index: -1;
+        animation: floatObject1 6s ease-in-out infinite;
         @include sp {
           display: none;
         }
@@ -412,24 +420,36 @@
   .NewsSec {
     padding: 12rem 0 0;
     @include sp {
-      padding: 6rem 0 0;
+      padding: 0;
     }
   }
 
   .ArtTrain {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6rem;
-    max-width: 1680px;
     margin: 0 auto;
+    position: relative;
+
     @include sp {
       flex-direction: column-reverse;
       padding: 0 2rem;
       gap: 4rem;
+      width: 100%;
     }
 
-    .bg {
-      width: 25.5rem;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -20%;
+      right: 0;
+      width: 40rem;
+      height: 95rem;
+      background: center/cover no-repeat url('../../img/bg_object_2.svg');
+      z-index: -1;
+      animation: floatObject2 7s ease-in-out infinite;
       @include sp {
         display: none;
       }
@@ -499,7 +519,7 @@
   .Concept {
     padding: 12rem 0;
     @include sp {
-      padding: 6rem 00;
+      padding: 6rem 2rem 6rem;
     }
     .list {
       display: grid;
@@ -544,42 +564,68 @@
     position: relative;
     width: 100%;
 
-    img {
-      opacity: 0;
-      transform: translateX(100%);
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
-    &.train-running {
+    .marquee-content {
+      display: inline-flex;
+      gap: 10rem;
+      animation: marqueeScroll 20s linear infinite;
+
+      @include sp {
+        gap: 2rem;
+        animation: marqueeScroll 8s linear infinite;
+      }
+
       img {
-        animation: trainRun 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-        animation-delay: 0s;
+        height: auto;
+        width: auto;
+        display: inline-block;
       }
     }
   }
 
-  @keyframes trainRun {
+  @keyframes marqueeScroll {
     0% {
-      opacity: 1;
-      transform: translateX(100%);
-      animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-    25% {
-      opacity: 1;
       transform: translateX(0);
-      animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    }
-    50% {
-      opacity: 1;
-      transform: translateX(-100%);
-      animation-timing-function: linear;
-    }
-    50.1% {
-      opacity: 0;
-      transform: translateX(-100%);
     }
     100% {
-      opacity: 0;
-      transform: translateX(100%);
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes floatObject1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(0.8rem, -1rem);
+    }
+    50% {
+      transform: translate(-0.5rem, -0.8rem);
+    }
+    75% {
+      transform: translate(1rem, 0.5rem);
+    }
+  }
+
+  @keyframes floatObject2 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-1rem, 0.8rem);
+    }
+    50% {
+      transform: translate(0.5rem, -1.3rem);
+    }
+    75% {
+      transform: translate(-0.8rem, -0.5rem);
     }
   }
 }

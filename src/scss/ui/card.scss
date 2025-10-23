@@ -8,6 +8,10 @@
   border-radius: 2rem;
   display: grid;
   gap: 4rem;
+  width: 100rem;
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
 
   @include sp {
     width: 33.5rem;

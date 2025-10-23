@@ -57,6 +57,17 @@ $(document).ready(function () {
     }
   });
 
+  // ハンバーガーメニュー内のリンクをクリックしたらメニューを閉じる
+  $('.Header .expand .details a').on('click', function () {
+    if ($('.Header').hasClass('is-open')) {
+      $('.Header').removeClass('is-open');
+      $('.menu').removeClass('is-open');
+      $('body').removeClass('no-scroll');
+      $('body').css('--scroll-top', '');
+      $(window).scrollTop(scrollTop);
+    }
+  });
+
   // アンカーリンクのスムーススクロール（ヘッダー高さ考慮）
   $('a[href^="#"]').on('click', function (e) {
     const href = $(this).attr('href');
@@ -208,23 +219,16 @@ $(document).ready(function () {
     sr.reveal('.Nowhere .info', {
       delay: 300
     });
-    sr.reveal('.Nowhere .cardWrapper .bg_left', {
-      origin: 'left',
-      distance: '100px',
-      delay: 200
-    });
     sr.reveal('.Nowhere .Card', {
       delay: 400
-    });
-    sr.reveal('.Nowhere .cardWrapper .bg_right', {
-      origin: 'right',
-      distance: '100px',
-      delay: 200
     });
 
     // News セクション
     sr.reveal('.NewsList .list li', {
       interval: 150
+    });
+    sr.reveal('.NewsSec .Button', {
+      delay: 300
     });
 
     // ArtTrain セクション
@@ -241,14 +245,6 @@ $(document).ready(function () {
     sr.reveal('.Concept .list li', {
       interval: 200,
       delay: 200
-    });
-
-    // Separator - 電車が走り抜けるアニメーション
-    sr.reveal('.Separator', {
-      delay: 100,
-      beforeReveal: el => {
-        el.classList.add('train-running');
-      }
     });
   }
 });

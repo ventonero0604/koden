@@ -12,6 +12,11 @@
     padding: 0 2rem;
     display: grid;
     gap: 3rem;
+
+    .image {
+      display: grid;
+      place-items: center;
+    }
     @include sp {
       padding: 0;
       margin-top: 2rem;
@@ -59,7 +64,7 @@
   }
 
   .gallery {
-    margin-top: 8rem;
+    margin-top: 12rem;
     display: grid;
     place-items: center;
     @include sp {

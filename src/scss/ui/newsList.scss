@@ -18,8 +18,11 @@
       a {
         display: flex;
         gap: 4rem;
-        padding: 2rem 4rem;
+        padding: 2rem 6rem 2rem 4rem;
         position: relative;
+        @include sp {
+          padding: 2rem 4rem 2rem 0;
+        }
 
         &:after {
           position: absolute;
@@ -30,23 +33,12 @@
           display: block;
           width: 0.8rem;
           height: 1.5rem;
-          background: center/contain no-repeat url(../img/ico_arrow.svg);
+          background: center/contain no-repeat url(../../img/ico_arrow.svg);
         }
 
         .date {
           font-size: 1.2rem;
           color: #a0a5a2;
-        }
-
-        .label {
-          border: 1px solid #d1d1d1;
-          height: 2.5rem;
-          width: 7.3rem;
-          font-size: 1rem;
-          background: white;
-          border-radius: 100vh;
-          display: grid;
-          place-items: center;
         }
 
         @include sp {

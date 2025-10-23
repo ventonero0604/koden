@@ -47,27 +47,32 @@
       <div class="swiper archive-swiper">
         <ul class="swiper-wrapper list">
           <li class="swiper-slide">
-            <a href="./gallery.html">
+            <a href="./gallery_06.html">
+              <img src="./img/exhibition/archive_06.png" alt="">
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="./gallery_05.html">
               <img src="./img/exhibition/archive_01.png" alt="">
             </a>
           </li>
           <li class="swiper-slide">
-            <a href="./gallery.html">
+            <a href="./gallery_04.html">
               <img src="./img/exhibition/archive_02.png" alt="">
             </a>
           </li>
           <li class="swiper-slide">
-            <a href="./gallery.html">
+            <a href="./gallery_03.html">
               <img src="./img/exhibition/archive_03.png" alt="">
             </a>
           </li>
           <li class="swiper-slide">
-            <a href="./gallery.html">
+            <a href="./gallery_02.html">
               <img src="./img/exhibition/archive_04.png" alt="">
             </a>
           </li>
           <li class="swiper-slide">
-            <a href="./gallery.html">
+            <a href="./gallery_01.html">
               <img src="./img/exhibition/archive_05.png" alt="">
             </a>
           </li>
@@ -132,10 +137,7 @@
         </small>
       </div>
 
-      <div class="cardWrapper Wrapper">
-        <figure class="bg_left">
-          <img src="./img/ico_arttrain.svg" alt="">
-        </figure>
+      <div class="cardWrapper">
         <aside class="Card">
           <div class="content">
             <figure class="image">
@@ -159,9 +161,6 @@
             </span>
           </a>
         </aside>
-        <figure class="bg_right">
-          <img src="./img/bg_arttrain.png" alt="">
-        </figure>
       </div>
     </section>
 
@@ -171,53 +170,17 @@
           <img src="./img/ttl_news.svg" alt="NEWS">
           お知らせ
         </h2>
-        <ul class="list">
-          <li>
-            <a href="./news_detail.html">
-              <span class="date">
-                2025.00.00
-              </span>
-              <span class="label">
-                展示
-              </span>
-              <span class="text">
-                旅する書とデザイン -安田女子大学 造形デザイン学科- 開催中
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="./news_detail.html">
-              <span class="date">
-                2025.00.00
-              </span>
-              <span class="label">
-                展示
-              </span>
-              <span class="text">
-                過去展示情報アーカイブをご確認いただけます。 </span>
-            </a>
-          </li>
-          <li>
-            <a href="./news_detail.html">
-              <span class="date">
-                2025.00.00
-              </span>
-              <span class="label">
-                お知らせ
-              </span>
-              <span class="text">
-                走る美術館のサイトを公開しました。
-              </span>
-            </a>
-          </li>
-        </ul>
+        {{> newsList}}
+        <a href="./news.html" class="Button">
+          NEWS一覧はこちら
+          <span class="arrow-icon">
+            <img src="./img/ico_button_arrow.svg" alt="→">
+          </span>
+        </a>
       </div>
     </section>
 
     <section class="ArtTrain">
-      <figure class="bg">
-        <img src="./img/bg_arttrain.png" alt="" class="bg">
-      </figure>
       <div class="texts">
         <h3 class="title">
           <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
@@ -271,7 +234,14 @@
     </section>
 
     <figure class="Separator">
-      <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
+      <div class="marquee">
+        <div class="marquee-content">
+          <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
+          <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
+          <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
+          <img src="./img/ttl_arttram.svg" alt="HIRODEN ART TRAM">
+        </div>
+      </div>
     </figure>
 
   </main>
