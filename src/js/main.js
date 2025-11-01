@@ -8,31 +8,42 @@ import ScrollReveal from 'scrollreveal';
 
 // ローディング画面 - トップページのみ
 if (document.querySelector('.Loading')) {
-  // ページ読み込み完了を待つ
-  window.addEventListener('load', function () {
-    const loading = document.querySelector('.Loading');
-    const logo = document.querySelector('.Loading_logo');
+  const loading = document.querySelector('.Loading');
+  const logo = document.querySelector('.Loading_logo');
+
+  // DOMContentLoadedで開始(iframeの影響を受けない)
+  const startLoading = () => {
+    console.log('Loading animation started'); // デバッグ用
 
     // ロゴを左から白で塗る
     setTimeout(() => {
       logo.classList.add('fill');
+      console.log('Logo fill started'); // デバッグ用
     }, 300);
 
     // ロゴが塗り終わったら少し間を開けてロゴが消え始める
     setTimeout(() => {
       logo.classList.add('slide-up');
+      console.log('Logo slide-up started'); // デバッグ用
     }, 1600); // 300ms + 800ms(fill) + 500ms(間)
 
     // ロゴが少し消えてから背景を上に持ち上げる
     setTimeout(() => {
       loading.classList.add('hide');
+      console.log('Loading hide started'); // デバッグ用
     }, 1875); // 1600ms + 275ms(ロゴが少し消える時間)
 
     // ローディング画面を完全に削除
     setTimeout(() => {
       loading.remove();
+      console.log('Loading removed'); // デバッグ用
     }, 2675); // 1875ms + 800ms(背景スライド)
-  });
+  };
+
+  console.log('Loading script loaded, readyState:', document.readyState); // デバッグ用
+
+  // すぐに開始(ES moduleは常にdeferされるため、DOMは既に準備完了している)
+  startLoading();
 }
 
 // ハンバーガーメニューの実装

@@ -42,7 +42,9 @@ export default defineConfig({
           return `assets/${extType}/[name][extname]`;
         },
         chunkFileNames: 'assets/js/[name].js',
-        entryFileNames: 'assets/js/[name].js'
+        entryFileNames: 'assets/js/[name].js',
+        // 単一のバンドルを生成
+        manualChunks: undefined
       },
       input: {
         index: resolve(__dirname, root, 'index.html'),

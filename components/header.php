@@ -1,46 +1,21 @@
 <header class="Header">
   <h1>
-    <a href="<?php echo home_url(); ?>" class="logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" alt="HIC">
+    <a href="/" class="logo">
+      <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" alt="走る美術館">
     </a>
   </h1>
   <div class="content">
     <ul class="links">
-      <li>
-        <a href="<?php echo home_url('/about'); ?>">HICとは</a>
-      </li>
-      <li>
-        <a href="<?php echo home_url('/news'); ?>">NEWS</a>
-      </li>
-      <!-- <li>
-        <a href="<?php echo home_url('/media'); ?>">メディア</a>
-      </li> -->
-      <li><a href="<?php echo home_url('/contact'); ?>">お問い合わせ</a></li>
+      <?php get_template_part('components/menuLinks'); ?>
     </ul>
   </div>
   <div class="expand">
     <div class="wrapper">
+      <a href="/" class="innerLogo">
+        <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_white.svg" alt="走る美術館">
+      </a>
       <ul class="details">
-        <li><a href="<?php echo home_url('/about'); ?>">HICとは</a>
-          <ul>
-            <li>
-              <a href="<?php echo home_url('/team'); ?>">チーム</a>
-            </li>
-          </ul>
-        </li>
-        <li><a href="<?php echo home_url('/news'); ?>">NEWS</a></li>
-        <li><a href="<?php echo home_url('/contact'); ?>">お問い合わせ</a></li>
-        <!-- <li><a href="<?php echo home_url('/media'); ?>">メディア</a>
-          <ul>
-            <li>
-              <a href="<?php echo home_url('/media/column'); ?>">コラム</a>
-            </li>
-            <li>
-              <a href="<?php echo home_url('/media/story'); ?>">ストーリー</a>
-            </li>
-          </ul>
-        </li>
-        <li><a href="<?php echo home_url('/portfolio'); ?>">ポートフォリオ</a></li> -->
+        <?php get_template_part('components/menuLinks'); ?>
       </ul>
     </div>
   </div>
