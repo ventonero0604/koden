@@ -56,6 +56,38 @@
             <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ttl_gallery.svg" alt="GALLERY">
           </h2>
 
+          <?php if (get_field('gallery_modal_image_1')) : ?>
+            <ul class="list">
+              <?php
+              $i = 1;
+              while (get_field('gallery_modal_image_' . $i)) {
+                $modal_image = get_field('gallery_modal_image_' . $i);
+                $modal_title = get_field('gallery_modal_title_' . $i);
+                $modal_artist = get_field('gallery_modal_artist_' . $i);
+              ?>
+                <li>
+                  <figure class="image">
+                    <img src="<?php echo esc_url($modal_image); ?>" alt="<?php echo esc_attr($modal_title); ?>">
+                  </figure>
+                  <div class="texts">
+                    <h3 class="title">
+                      <?php echo esc_html($modal_title); ?>
+                    </h3>
+                    <p class="name">
+                      <?php echo esc_html($modal_artist); ?>
+                    </p>
+                    <button class="js-modal" data-image="<?php echo esc_url($modal_image); ?>" data-alt="<?php echo esc_attr($modal_title); ?>">
+                      作品を拡大して見る >
+                    </button>
+                  </div>
+                </li>
+              <?php
+                $i++;
+              }
+              ?>
+            </ul>
+          <?php endif; ?>
+
           <div class="buttons">
             <?php
             // ギャラリーリンク1〜5をループで生成
@@ -65,11 +97,16 @@
 
               // テキストとURLの両方が存在する場合のみリンクを表示
               if ($link_text && $link_url) {
-                echo '<a href="' . esc_url($link_url) . '" class="Button">' . esc_html($link_text) . '</a>';
+                $arrow_icon_url = get_template_directory_uri() . '/dist/img/ico_button_arrow.svg';
+                echo '<a href="' . esc_url($link_url) . '" class="Button">' . esc_html($link_text) . '<span class="arrow-icon"><img src="' . esc_url($arrow_icon_url) . '" alt="→"></span></a>';
               }
             }
             ?>
-            <a href="<?php echo home_url('/gallery/'); ?>" class="Button">展示会情報に戻る</a>
+            <a href="<?php echo home_url('/gallery/'); ?>" class="Button">展示会情報に戻る
+              <span class="arrow-icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_button_arrow.svg" alt="→">
+              </span>
+            </a>
           </div>
         </section>
 
