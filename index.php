@@ -17,8 +17,8 @@
   <main class="Top">
     <section class="Kv">
       <div class="movie">
-        <video class="pc" src="<?php echo get_template_directory_uri(); ?>/dist/img/pc.mp4" autoplay muted playsinline></video>
-        <video class="sp" src="<?php echo get_template_directory_uri(); ?>/dist/img/sp.mp4" autoplay muted playsinline></video>
+        <video class="pc" src="<?php echo get_template_directory_uri(); ?>/dist/img/pc.mp4" autoplay muted playsinline loop></video>
+        <video class="sp" src="<?php echo get_template_directory_uri(); ?>/dist/img/sp.mp4" autoplay muted playsinline loop></video>
       </div>
     </section>
 
@@ -243,7 +243,7 @@
                     </span>
                   <?php endif; ?>
                   <span class="text">
-                    <?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?>
+                    <?php echo get_the_title(); ?>
                   </span>
                 </a>
               </li>
