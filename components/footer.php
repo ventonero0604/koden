@@ -1,6 +1,6 @@
 <footer class="Footer">
   <div class="contents">
-    <a href="/" class="hiroshima">
+    <a href="<?php echo home_url(); ?>" class="hiroshima">
       <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_hiroshima.svg" alt="広島電鉄株式会社">
     </a>
     <ul class="links">

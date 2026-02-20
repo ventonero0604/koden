@@ -17,8 +17,8 @@
   <main class="Top">
     <section class="Kv">
       <div class="movie">
-        <video class="pc" src="<?php echo get_template_directory_uri(); ?>/dist/img/pc.mp4" autoplay muted playsinline></video>
-        <video class="sp" src="<?php echo get_template_directory_uri(); ?>/dist/img/sp.mp4" autoplay muted playsinline></video>
+        <video class="pc" src="<?php echo get_template_directory_uri(); ?>/dist/img/pc.mp4" autoplay muted playsinline loop></video>
+        <video class="sp" src="<?php echo get_template_directory_uri(); ?>/dist/img/sp.mp4" autoplay muted playsinline loop></video>
       </div>
     </section>
 
@@ -200,7 +200,7 @@
               </p>
             </div>
           </div>
-          <a href="<?php echo home_url('/'); ?>#" class="Button">
+          <a href="https://hiroshimadentetsu.form.kintoneapp.com/public/ab8e34d259fc3c9aaaddced5eae2b31b36a1f07f8dbd0aeeb529207b5016f808" class="Button">
             アンケートはこちら
             <span class="arrow-icon">
               <img src="<?php echo get_template_directory_uri(); ?>/dist/img/ico_button_arrow.svg" alt="→">
@@ -243,7 +243,7 @@
                     </span>
                   <?php endif; ?>
                   <span class="text">
-                    <?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?>
+                    <?php echo get_the_title(); ?>
                   </span>
                 </a>
               </li>

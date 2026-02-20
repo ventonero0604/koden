@@ -1,6 +1,6 @@
 <header class="Header">
   <h1>
-    <a href="/" class="logo">
+    <a href="<?php echo home_url(); ?>" class="logo">
       <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" alt="走る美術館">
     </a>
   </h1>
@@ -11,7 +11,7 @@
   </div>
   <div class="expand">
     <div class="wrapper">
-      <a href="/" class="innerLogo">
+      <a href="<?php echo home_url(); ?>" class="innerLogo">
         <img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo_white.svg" alt="走る美術館">
       </a>
       <ul class="details">

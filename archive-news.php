@@ -51,7 +51,7 @@ Template Name: NEWSアーカイブ
                   </span>
                 <?php endif; ?>
                 <span class="text">
-                  <?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?>
+                  <?php echo get_the_title(); ?>
                 </span>
               </a>
             </li>
